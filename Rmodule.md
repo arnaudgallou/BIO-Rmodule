@@ -691,7 +691,7 @@ iris %>%
 
 ![](figures/geom_boxplot.svg)<!-- -->
 
-`ggplot` offers many plotting possibilities. You can see more [here](https://ggplot2-book.org).
+`ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
 # Exercice
 Using the `iris` dataset, look at the relationship between sepal area and petal area in *Iris versicolor* and *Iris virginica*.
