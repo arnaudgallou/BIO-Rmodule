@@ -1,2 +1,2 @@
 # BIO-Rmodule
-R module for UiB BIO students
+R module for BIO300A and BIO201 students
