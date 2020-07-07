@@ -195,7 +195,7 @@ m_to_feet <- function(value) {
 m_to_feet(100)
 ## [1] 328.084
 ```
-Values are assigned to argument names in the order they are defined. Writing the name of each argument is not mandatory but recommended to avoid confusion or unwanted results.
+Values are assigned to argument names in the order they are defined. Writing the name of each argument is not mandatory but recommended to avoid any ambiguity or unwanted results.
 
 Consider the example below:
 
