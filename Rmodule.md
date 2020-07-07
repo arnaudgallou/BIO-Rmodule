@@ -1,3 +1,30 @@
+# Table of content
+- [Preamble](#preamble)
+- [R basics](#r-basics)
+  * [Data types](#data-types)
+  * [Vectors](#vectors)
+  * [Variables](#variables)
+  * [Functions](#functions)
+  * [Relational and logical operators](#relational-and-logical-operators)
+  * [Comments](#comments)
+- [Tidyverse](#tidyverse)
+  * [Pipe operator](#pipe-operator)
+  * [Manipulating data](#manipulating-data)
+    + [mutate()](#mutate--)
+    + [select()](#select--)
+    + [drop_na()](#drop-na--)   
+    + [filter()](#filter--)
+    + [if_else() & case_when()](#if-else-----case-when--)
+    + [distinct()](#distinct--)
+    + [group_by()](#group-by--)
+    + [summarize()](#summarize--)
+  * [Importing data](#importing-data)
+  * [Plotting data](#plotting-data)
+- [Exercice](#exercice)
+- [To go further](#to-go-further)
+
+<a name="preamble" />
+
 # Preamble
 This is a brief and condensed guide to help you grasp the **fundamentals** of the **R language** and **tidyverse** as quick as possible.
 
@@ -8,10 +35,14 @@ After completing this module, you should be able to:
 * know what the main logical operators are and how to use them
 * use the basic tidyverse functions to import, transform and visualize your data
 
+<a name="r-basics" />
+
 # R basics
 Before you start, install R and Rstudio if you have not yet. I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
 
 Just like other coding and programing languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
+
+<a name="data-types" />
 
 ## Data types
 R treats all data as objects (think objects as nouns and adjectives). The most basic type of object in R is called a vector. E.g. `24` and `"hi"` are two different vectors of one element. Different vectors have different data types.
@@ -64,6 +95,8 @@ TRUE + TRUE
 ## Error in "1" + "1": non-numeric argument to binary operator
 ```
 
+<a name="vectors" />
+
 ## Vectors
 You can combine several elements into a single vector using the `c()` function. In this case, the vector is a sequence of **elements** of the **same type**.
 
@@ -89,6 +122,8 @@ If you have elements of different types in a single vector, R will automatically
 c(1, 2, 3, "Hi", TRUE)
 ## [1] "1"    "2"    "3"    "Hi"   "TRUE"
 ```
+
+<a name="variables" />
 
 ## Variables
 Variables provide a storage space to one or a combination of R objects. You can store in an variable a vector, function, list, data frame, matrix, chunck of code... well pretty much anything, including another variable.
@@ -127,6 +162,8 @@ a
 ```
 **Note:** R is case sensitive. This means that lower and upper case letters are interpreted as different characters. E.g. `foo` is **not** the same as `Foo`.
 
+<a name="functions" />
+
 ## Functions
 A function is what you use to perform an action on your objects. Similarly to objects, which can be thought as nouns and adjectives, functions can be thought as verbs.
 
@@ -139,7 +176,7 @@ function_a(arg1, arg2)
 # a function with no argument
 function_b()
 ```
-**Note:** most arguments are optional. Each argument in a function is separated by a `,`.
+**Note:** most arguments are optional. Arguments are separated by a `,`.
 
 Let's sum our previous `x` and `y` objects using the `sum()` function:
 
@@ -176,6 +213,8 @@ divide(y, x)
 divide(divisor = y, dividend = x)
 ## [1] 0.5
 ```
+
+<a name="relational-and-logical-operators" />
 
 ## Relational and logical operators
 You can use relational and logical operators to compare values and perform boolean operations. These operators yield a boolean value, that is either `TRUE` or `FALSE`.
@@ -256,6 +295,8 @@ TRUE | FALSE
 ## [1] TRUE
 ```
 
+<a name="comments" />
+
 ## Comments
 You can write comments in your script to add details and information to your code, or to stop a line from running. Comments are muted, that is they are not interpreted by the console.
 
@@ -268,6 +309,8 @@ x <- 2
 x
 ## [1] 2
 ```
+
+<a name="tidyverse" />
 
 # Tidyverse
 Tidyverse is a **collection** of **packages** specifically designed to import, manipulate, transform and visualize data. All the tidyverse packages incorporate a common phylosophy and grammar to form a **coherent framework** that facilitates the use of the tidyverse functions.
@@ -282,6 +325,8 @@ When the download is complete, you can load the library with the following funct
 ```r
 library(tidyverse)
 ```
+
+<a name="pipe-operator" />
 
 ## Pipe operator
 One of the key features of tidyverse is the possibility to chain functions in an effective way using the pipe operator ` %>% `. The pipe operator passes the object on its left to the function on its right (or the next line). It allows you to break down your code in small components connected to each other via a ` %>% `, making the code easy to read and write. The pipe operator also minimizes the need to name things, consequently reducing the risk of name collisions.
@@ -301,7 +346,11 @@ To pass the object to a different argument in a function, you can use the `.` pl
 >`x %>% f(y, .)` is equivalent to `f(y, x)`  
 `x %>% f(y, z = .)` is equivalent to `f(y, z = x)`
 
+**Note:** the keyboard shorcut for `%>%` is `Ctrl+Shift+M` (Windows & Linux) or	`Cmd+Shift+M` (Mac).
+
 *Examples taken from the [official documentation](https://magrittr.tidyverse.org).
+
+<a name="manipulating-data" />
 
 ## Manipulating data
 Here, you will learn some key functions from the tidyverse to handle data.
@@ -328,6 +377,8 @@ trees
 # 8 Larix decidua Mill.       6        NA
 # 9 Betula pendula Roth.      4      1700
 ```
+
+<a name="mutate--" />
 
 ### mutate()
 The `mutate()` function adds or transforms an existing column.
@@ -405,6 +456,8 @@ trees %>%
   ))
 ```
 
+<a name="select--" />
+
 ### select()
 The `select()` function subsets columns by name, number and/or type.
 
@@ -451,6 +504,8 @@ trees
 # 9 Betula pendula Roth.      4      1700
 ```
 
+<a name="drop-na--" />
+
 ### drop_na()
 The `drop_na()` function removes `NA` values in the entire data frame or specific columns.
 
@@ -472,6 +527,8 @@ trees
 # 8 Betula pendula Roth.      4      1700
 ```
 
+<a name="filter--" />
+
 ### filter()
 The `filter()` function subsets a data frame by keeping rows that satisfy one or more conditions.
 
@@ -486,6 +543,8 @@ trees %>% filter(height > 25 | species == "Betula pendula Roth.")
 # 2 Larix decidua Mill.      34      2300
 # 3 Betula pendula Roth.      4      1700
 ```
+
+<a name="if-else-----case-when--" />
 
 ### if_else() & case_when()
 The `if_else()` and `case_when()` functions allows you to replace column values with another based on one or more conditions.
@@ -548,6 +607,8 @@ trees
 # 8 Betula pendula Roth.      4      1700
 ```
 
+<a name="distinct--" />
+
 ### distinct()
 The `distinct()` function subsets unique rows from a data frame.
 
@@ -562,6 +623,8 @@ trees %>% distinct(species, .keep_all = TRUE) # use .keep_all = TRUE to retain a
 # 2 Fagus sylvatica L.       17       600
 # 3 Betula pendula Roth.      4      1700
 ```
+
+<a name="group-by--" />
 
 ### group_by()
 The `group_by()` function groups your data by one or more variables. This is useful when you want to perform operations on clusters of data rather than the whole dataset.
@@ -587,6 +650,8 @@ trees %>%
 ```
 **Note:** ungrouping ensures that future operations will not only apply to the grouping variables previously set.
 
+<a name="summarize--" />
+
 ### summarize()
 The `summarize()` (or `summarise()`) function summarizes and reduces the dimensions of your data frame by grouping variables.
 
@@ -605,7 +670,7 @@ trees %>%
 # 3 Larix decidua Mill.       2300       34   
 # 4 Larix decidua Mill.       2900        7.67
 ```
-The code above is the equivalent of:
+The code above is the equivalent to:
 
 ```r
 trees %>% 
@@ -615,6 +680,8 @@ trees %>%
   distinct(species, elevation, height_mean) %>% 
   arrange(species, elevation) # to sort rows by species and elevation in ascending order
 ```
+
+<a name="importing-data--" />
 
 ## Importing data
 You can import `.csv` files using the `read_` [function family](https://readr.tidyverse.org/reference/read_delim.html). There are different functions for different separators.
@@ -631,6 +698,8 @@ Be sure to use the appropriate `read_` function for your file. Alternatively, yo
 ```r
 read_delim("path_to_file/data.csv", delim = "\t") # to read tab separated values
 ```
+
+<a name="plotting-data--" />
 
 ## Plotting data
 You can plot graphs using the ggplot2 package (part of the tidyverse).
@@ -693,6 +762,8 @@ iris %>%
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
+<a name="exercice--" />
+
 # Exercice
 Using the `iris` dataset, look at the relationship between sepal area and petal area in *Iris versicolor* and *Iris virginica*.
 
@@ -727,6 +798,8 @@ Here is the output you are supposed to get:
 If you ended up with the same plot, congratulations!
 
 If not, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
+
+<a name="to-go-further--" />
 
 # To go further
 Here are some recommendations if you want to expand your knowledge and skills in R:
