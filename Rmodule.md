@@ -110,7 +110,7 @@ c(1L, -2L, 430L)
 # character vector
 c("foo", "bar")
 
-# logicial vector
+# logical vector
 c(TRUE, FALSE, FALSE)
 ```
 
