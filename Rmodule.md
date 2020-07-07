@@ -98,7 +98,7 @@ TRUE + TRUE
 <a name="vectors" />
 
 ## Vectors
-You can combine several elements into a single vector using the `c()` function. In this case, the vector is a sequence of **elements** of the **same type**.
+You can combine several elements into a single vector using the `c()` [function](#functions). In this case, the vector is a sequence of **elements** of the **same type**.
 
 ```r
 # double-precision vector
