@@ -1,4 +1,4 @@
-# Table of content
+# Table of contents
 - [Preamble](#preamble)
 - [R basics](#r-basics)
   * [Data types](#data-types)
