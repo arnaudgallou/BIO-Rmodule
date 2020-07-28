@@ -128,9 +128,7 @@ c(1, 2, 3, "Hi", TRUE)
 ## Variables
 Variables provide a storage space to R objects. You can store in an variable a vector, function, list, data frame, matrix, chunck of code... well pretty much anything, including another variable.
 
-To assign a name to your object, use the assignment operator `<-`.
-
-**Note:** the keyboard shorcut for `<-` is `Alt+-` (Windows & Linux) or	`Option+-` (Mac).
+To assign a name to your object, use the assignment operator `<-` (keyboard shorcut: `Alt+-` (Windows & Linux) or	`Option+-` (Mac)).
 
 ```r
 my_variable <- my_object
