@@ -130,6 +130,8 @@ Variables provide a storage space to R objects. You can store in an variable a v
 
 To assign a name to your object, use the assignment operator `<-`.
 
+**Note:** the keyboard shorcut for `<-` is `Alt+-` (Windows & Linux) or	`Option+-` (Mac).
+
 ```r
 my_variable <- my_object
 ```
