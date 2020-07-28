@@ -337,7 +337,7 @@ Consider the following examples*:
 `x %>% f(y)` is equivalent to `f(x, y)`  
 `x %>% f %>% g %>% h` is equivalent to `h(g(f(x)))`
 
-` %>% ` can be read as `then`. E.g. `x %>% f %>% g` could be translated into words as: **object** *then* **do_sth** *then* **do_sth_else**.
+` %>% ` can be read as `then`. E.g. `x %>% f() %>% g()` could be translated into words as: **object** *then* **do_sth** *then* **do_sth_else**.
 
 **Note:** by default, ` %>% ` passes the object on the left to the **first argument** of the function on the right.
 
