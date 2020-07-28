@@ -581,7 +581,6 @@ Use `case_when()` if you want to test more than one condition and edit values ba
 case_when(
   condition1 ~ value_if_cond1_TRUE,
   condition2 ~ value_if_cond2_TRUE,
-  ...
   conditionN ~ value_if_condN_TRUE,
   TRUE ~ value_if_above_conds_FALSE
 )
