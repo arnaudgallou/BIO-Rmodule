@@ -442,7 +442,7 @@ trees %>%
 # 9 Betula pendula Roth.   13.1     5577. Alps
 ```
 A word about what happens here:  
-`~ .x / 0.3048` is an anonymous function. It is the shorthand for `function(x) {x / 0.3048}`. The placeholder `.x` or `.` refers to the subset of rows.
+`~ .x / 0.3048` is an anonymous function. It is the shorthand for `function(x) {x / 0.3048}`. The placeholder `.x` refers to the subset of rows.
 
 The code above targets all the columns of type `dbl` using the `where()` [helper](https://dplyr.tidyverse.org/reference/select.html) and applies our anonymous function to divide the values of the selected column by 0.3048.
 
