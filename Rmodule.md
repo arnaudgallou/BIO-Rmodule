@@ -789,16 +789,16 @@ iris_colors <- c("#FF9671", "#00D2FC")
     x = expression(Petal~area~(cm^{2})),
     y = expression(Sepal~area~(cm^{2}))
   ) +
-  theme_minimal() +
+  theme_minimal() + # to change the general theme of the plot
   theme(legend.title = element_blank())
 ```
 Here is the output you are supposed to get:
 
 ![](figures/excercice_output.svg)<!-- -->
 
-If you ended up with the same plot, congratulations!
+If you ended up with the same plot, congratulations! Do not hesitate to try to add the third species in the graph and to play around with the different colors and shapes.
 
-If not, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
+If you got a different graph, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
 
 <a name="to-go-further--" />
 
