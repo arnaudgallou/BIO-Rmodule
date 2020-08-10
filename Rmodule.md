@@ -38,10 +38,7 @@ After completing this module, you should be able to:
 <a name="r-basics" />
 
 # R basics
-Before you start, install both R and RStudio if you have not yet.
-
-* [Download  R](https://cran.rstudio.com)
-* [Download RStudio](https://rstudio.com/products/rstudio/download/#download)
+Before you start, download and install both R ([download  R](https://cran.rstudio.com)) and RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you have not yet.
 
 I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
 
