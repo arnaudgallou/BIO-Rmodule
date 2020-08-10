@@ -40,8 +40,8 @@ After completing this module, you should be able to:
 # R basics
 Before you start, install both R and RStudio if you have not yet.
 
-* [Link to download  R](https://cran.rstudio.com)
-* [Link to download RStudio](https://rstudio.com/products/rstudio/download/#download)
+* [Download  R](https://cran.rstudio.com)
+* [Download RStudio](https://rstudio.com/products/rstudio/download/#download)
 
 I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
 
