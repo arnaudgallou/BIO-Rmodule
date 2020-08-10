@@ -816,6 +816,6 @@ Here are some recommendations if you want to expand your knowledge and skills in
 * [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org)
 * [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
 
-Tips:
+Extras:
 * [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
 * [Data viewer](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
