@@ -46,8 +46,6 @@ Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R s
 
 Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy. Finally, remember to **save your script regularly**.
 
-Now that you know the two most important RStudio windows, we can move on to the serious stuff.
-
 <a name="data-types" />
 
 ## Data types
