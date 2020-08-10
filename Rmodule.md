@@ -21,7 +21,7 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
 - [Exercice](#exercice)
-- [To go further](#to-go-further)
+- [Further reading and tips](#to-go-further)
 
 <a name="preamble" />
 
@@ -804,9 +804,9 @@ If you ended up with the same plot, congratulations! Do not hesitate to try to a
 
 If you got a different graph, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
 
-<a name="to-go-further--" />
+<a name="further-reading--" />
 
-# To go further
+# Further reading and tips
 Here are some recommendations if you want to expand your knowledge and skills in R:
 
 * [BioStats](https://biostats.w.uib.no)
@@ -816,6 +816,6 @@ Here are some recommendations if you want to expand your knowledge and skills in
 * [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org)
 * [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
 
-R tips:
+Tips:
 * [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
 * [Data viewer](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
