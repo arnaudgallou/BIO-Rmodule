@@ -38,9 +38,13 @@ After completing this module, you should be able to:
 <a name="r-basics" />
 
 # R basics
-Before you start, install R and Rstudio if you have not yet. I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
+Before you start, install R and RStudio if you have not yet. I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
 
-Just like other coding and programing languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
+Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R script window** is what you will use to **write and save** your code. Write in your new script `"Welcome!"` and run the line using `Ctrl+Enter` (Windows/Linux) `Cmd+Return` (Mac). The output is displayed in the console window (by default, it is the bottom left window) and should be `[1] "Welcome!"`.
+
+Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy. Finally, remember to **save your script regularly**.
+
+Ok, now that you know the two most important RStudio windows, we can move on to the serious stuff.
 
 <a name="data-types" />
 
@@ -811,3 +815,7 @@ Here are some recommendations if you want to expand your knowledge and skills in
 * [R for Data Science](https://r4ds.had.co.nz/index.html)
 * [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org)
 * [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
+
+R tips:
+* [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
+* [Data viewer](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
