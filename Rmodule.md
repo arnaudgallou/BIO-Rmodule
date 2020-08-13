@@ -308,9 +308,9 @@ To add a comment, simply insert a `#` before the statement you want to comment.
 
 ```r
 # comments are not interpreted by the console
-x <- 2
-# x <- 4
-x
+test_value <- 2
+# test_value <- 4
+test_value
 ## [1] 2
 ```
 
