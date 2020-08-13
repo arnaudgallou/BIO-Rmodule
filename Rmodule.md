@@ -830,4 +830,4 @@ RStudio useful functionalities:
 * [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
 
 # Bonus
-Colors are important to make your figures more appealing to the readers and/or to convey extra information easily. You can use color-picker websites such as [Coolors](https://coolors.co) to help you pick the best colors for your figures. Coolors offers many useful tools, including the possibility to save color palettes and check for color blindness.
+Colors are important to make your figures more appealing to the readers and/or to convey extra information easily. You can use online color pickers such as [Coolors](https://coolors.co) to help you pick the best colors for your figures. Coolors offers many useful tools, including the possibility to save color palettes and check for color blindness.
