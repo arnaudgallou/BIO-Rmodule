@@ -706,7 +706,7 @@ read_delim("path_to_file/data.csv", delim = "\t") # to read tab separated values
 
 The `read_` functions use a `.` as the default decimal separator. **If your numeric values are separated with a `,`**, you need to specify it as shown below:
 ```r
-# to read a semicolon separated file using comma as decimal separator
+# to read a semicolon-separated values file using comma as decimal separator
 read_csv2("path_to_file/data.csv", locale = locale(decimal_mark = ","))
 # or
 read_delim("path_to_file/data.csv", delim = ";", locale = locale(decimal_mark = ","))
