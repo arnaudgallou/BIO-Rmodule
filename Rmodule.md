@@ -704,7 +704,7 @@ Be sure to use the appropriate `read_` function for your file. Alternatively, yo
 read_delim("path_to_file/data.csv", delim = "\t") # to read tab separated values
 ```
 
-The `read_` functions use a `.` as the default decimal separator. **If your values are separated with a `,`**, you need to specify it as follows:
+The `read_` functions use a dot (`.`) as the default decimal separator. **If your numeric values are separated with a comma (`,`)**, you need to specify it as follows:
 ```r
 read_csv2(locale = locale(decimal_mark = ",")) # to read a semicolon separated file using comma as decimal separator
 # or
