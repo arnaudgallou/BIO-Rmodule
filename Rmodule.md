@@ -158,10 +158,10 @@ z
 If two or more variables in the same environment share the same name, the variable that is called the last overwrites all the previous variables with the same name.
 
 ```r
-a <- 3
-b <- 4
-a <- b
-a
+small <- 3
+big <- 4
+small <- big
+small
 ## [1] 4
 ```
 **Note:** R is case sensitive. This means that lower and upper case letters are interpreted as different characters. E.g. `foo` is **not** the same as `Foo`.
