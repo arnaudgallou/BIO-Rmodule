@@ -695,8 +695,7 @@ The `pivot_longer()` function allows you to reshape the data in a tibble by pivo
 First, let's add a new column containing values of the trunk diameter:
 
 ```r
-trees %>% 
-  mutate(diameter_mean = c(29, 72, 86, 34))
+trees %>% mutate(diameter_mean = c(29, 72, 86, 34))
 # # A tibble: 4 x 4
 # species              elevation height_mean diameter_mean
 # <chr>                    <dbl>       <dbl>         <dbl>
