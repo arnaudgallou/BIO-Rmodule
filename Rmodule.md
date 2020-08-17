@@ -667,6 +667,7 @@ trees <- trees %>%
   group_by(species, elevation) %>% 
   summarize(height_mean = mean(height)) %>% 
   ungroup()
+trees
 # # A tibble: 4 x 3
 #   species              elevation height_mean
 #   <chr>                    <dbl>       <dbl>
@@ -707,13 +708,14 @@ trees %>%
 Now, let's put the `height_mean` and `diameter_mean` values into a single column named `size`:
 
 ```r
-trees %>% 
+trees <- trees %>% 
   mutate(diameter_mean = c(29, 72, 86, 34)) %>% 
   pivot_longer(
     cols = ends_with("mean"), # to select the columns to pivot. Here columns whose the name ends with "mean"
     names_to = "trait", # to pass the column names into a new column named "trait"
     values_to = "size" # to pass the height and diameter values into a new column named "size"
   )
+trees
 # # A tibble: 8 x 4
 # species              elevation trait          size
 # <chr>                    <dbl> <chr>         <dbl>
