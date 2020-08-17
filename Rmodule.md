@@ -689,7 +689,7 @@ trees %>%
 <a name="pivot--" />
 
 ### pivot_longer() & pivot_wider()
-The `pivot_longer()` function allows you to reshape the data in a tibble by pivoting rows to columns. `pivot_wider()` is the opposite of `pivot_longer()`. These functions are useful to make your data compliant with some plotting methods, although they are rarely used if your tibble is well structured from start.
+The `pivot_longer()` function allows you to reshape the data in a tibble by pivoting rows to columns. The `pivot_wider()` function does the opposite of `pivot_longer()`. These functions are useful to make your data compliant with some plotting methods, although they are rarely used if your tibble is well structured from start.
 
 First, let's add a new column containing values of the trunk diameter:
 
@@ -704,7 +704,7 @@ trees %>%
 # 3 Larix decidua Mill.     2300       34               86
 # 4 Larix decidua Mill.     2900        7.67            34
 ```
-Now, let's turn the `height_mean` and `diameter_mean` values into a single column named `size`:
+Now, let's put the `height_mean` and `diameter_mean` values into a single column named `size`:
 
 ```r
 trees %>% 
