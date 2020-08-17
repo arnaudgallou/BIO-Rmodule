@@ -726,7 +726,7 @@ trees %>%
 # 7 Larix decidua Mill.      2900 height_mean    7.67
 # 8 Larix decidua Mill.      2900 diameter_mean 34
 ```
-To revert it, use the `pivot_wider()` function:
+Use `pivot_wider()` to revert it:
 
 ```r
 tdf %>% 
