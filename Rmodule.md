@@ -687,63 +687,6 @@ trees %>%
   arrange(species, elevation) # to sort rows by species and elevation in ascending order
 ```
 
-<a name="pivot--" />
-
-### pivot_longer() & pivot_wider()
-The `pivot_longer()` function allows you to reshape a tibble by pivoting rows to columns. The `pivot_wider()` function does the opposite of `pivot_longer()`. These functions are useful to make your data compliant with some plotting methods, although they are rarely used if your tibble is well structured from start.
-
-First, let's add a new column containing values of the trunk diameter:
-
-```r
-trees %>% mutate(diameter_mean = c(29, 72, 86, 34))
-# # A tibble: 4 x 4
-# species              elevation height_mean diameter_mean
-# <chr>                    <dbl>       <dbl>         <dbl>
-# 1 Betula pendula Roth.    1700        4               29
-# 2 Fagus sylvatica L.       600       22.7             72
-# 3 Larix decidua Mill.     2300       34               86
-# 4 Larix decidua Mill.     2900        7.67            34
-```
-Now, let's put the `height_mean` and `diameter_mean` values into a single column named `size`:
-
-```r
-trees <- trees %>% 
-  mutate(diameter_mean = c(29, 72, 86, 34)) %>% 
-  pivot_longer(
-    cols = ends_with("mean"), # to select the columns to pivot. Here columns whose the name ends with "mean"
-    names_to = "trait", # to pass the column names into a new column named "trait"
-    values_to = "size" # to pass the height and diameter values into a new column named "size"
-  )
-trees
-# # A tibble: 8 x 4
-# species              elevation trait          size
-# <chr>                    <dbl> <chr>         <dbl>
-# 1 Betula pendula Roth.     1700 height_mean    4
-# 2 Betula pendula Roth.     1700 diameter_mean 29
-# 3 Fagus sylvatica L.        600 height_mean   22.7
-# 4 Fagus sylvatica L.        600 diameter_mean 72
-# 5 Larix decidua Mill.      2300 height_mean   34
-# 6 Larix decidua Mill.      2300 diameter_mean 86
-# 7 Larix decidua Mill.      2900 height_mean    7.67
-# 8 Larix decidua Mill.      2900 diameter_mean 34
-```
-Use `pivot_wider()` to revert it:
-
-```r
-trees %>% 
-  pivot_wider(
-    names_from = "trait", # to define the column name containing the names for the future columns
-    values_from = "size" # to define the column name containing the values for the future columns
-  )
-# # A tibble: 4 x 4
-# species              elevation height_mean diameter_mean
-# <chr>                    <dbl>       <dbl>         <dbl>
-# 1 Betula pendula Roth.    1700        4               29
-# 2 Fagus sylvatica L.       600       22.7             72
-# 3 Larix decidua Mill.     2300       34               86
-# 4 Larix decidua Mill.     2900        7.67            34
-```
-
 <a name="importing-data--" />
 
 ## Importing data
