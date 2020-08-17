@@ -332,7 +332,7 @@ library(tidyverse)
 <a name="pipe-operator" />
 
 ## Pipe operator
-One of the key features of tidyverse is the possibility to chain functions in an effective way using the pipe operator ` %>% `. The pipe operator passes the object on its left to the function on its right (or the next line). It allows you to break down your code in small components connected to each other via a ` %>% `, making the code easy to read and write.
+One of the key features of tidyverse is the possibility to chain functions in an effective way using the pipe operator ` %>% `. The pipe operator passes the object on its left to the function on its right (or the next line). It allows you to break down your code in small components connected to each other via a ` %>% `, making the code easy to read and write. The pipe operator also reduces the need to name objects and all the [problems](https://en.wikipedia.org/wiki/Name_collision) associated with it.
 
 Consider the following examples*:
 
