@@ -18,7 +18,6 @@
     + [distinct()](#distinct--)
     + [group_by()](#group-by--)
     + [summarize()](#summarize--)
-    + [pivot_longer() & pivot_wider()](#pivot--)
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
 - [Exercice](#exercice)
