@@ -729,7 +729,7 @@ trees %>%
 Use `pivot_wider()` to revert it:
 
 ```r
-tdf %>% 
+trees %>% 
   pivot_wider(
     names_from = "trait", # to define the column name containing the names for the future columns
     values_from = "size" # to define the column name containing the values for the future columns
