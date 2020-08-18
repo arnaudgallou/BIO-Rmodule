@@ -38,7 +38,7 @@ After completing this module, you should be able to:
 <a name="r-basics" />
 
 # R basics
-Before you start, download and install both R ([download  R](https://cran.rstudio.com)) and RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you have not yet.
+Before you start, download and install **both** R ([download  R](https://cran.rstudio.com)) and RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you have not yet.
 
 I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
 
@@ -121,8 +121,7 @@ c(TRUE, FALSE, FALSE)
 If you have elements of different types in a single vector, R will automatically convert each element to the same type.
 
 ```r
-# despite having a single character element,
-# the entire sequence is converted to the character type
+# despite having a single character element, the entire sequence is converted to the character type
 c(1, 2, 3, "Hi", TRUE)
 ## [1] "1"    "2"    "3"    "Hi"   "TRUE"
 ```
@@ -662,11 +661,10 @@ The `summarize()` (or `summarise()`) function summarizes and reduces the dimensi
 E.g. summarising the `trees` data frame by `species`, `elevation` and `height_mean`:
 
 ```r
-trees <- trees %>% 
+trees %>% 
   group_by(species, elevation) %>% 
   summarize(height_mean = mean(height)) %>% 
   ungroup()
-trees
 # # A tibble: 4 x 3
 #   species              elevation height_mean
 #   <chr>                    <dbl>       <dbl>
