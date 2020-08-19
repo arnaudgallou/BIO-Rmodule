@@ -802,9 +802,9 @@ iris_colors <- c("#FF9671", "#00D2FC")
   theme_minimal() + # to change the general theme of the plot
   theme(
     legend.title = element_blank(), # to remove the legend title
-    legend.text = element_text(size = 12), # to increase the size of the legend
+    legend.text = element_text(size = 11), # to increase the size of the legend
     axis.text = element_text(size = 11), # to increase the size of the axis tick labels
-    axis.title = element_text(size = rel(1.2)) # to increase the size of the axis title, relative to the default size (1.2 times as big as the default size here)
+    axis.title = element_text(size = rel(1.1)) # to increase the size of the axis title, relative to the default size (1.2 times as big as the default size here)
   )
 ```
 Here is the output you are supposed to get:
