@@ -466,9 +466,9 @@ The `select()` function subsets columns by name, number and/or type.
 Subsetting columns by name or number:
 
 ```r
-select(col_name1, col_name2, col_name3)
+select(col_name1, col_name4, col_name2, col_name3)
 # or
-select(1, 2, 3)
+select(1, 4, 2, 3)
 ```
 To subset columns by type, you can use [helper functions](https://dplyr.tidyverse.org/reference/select.html):
 
