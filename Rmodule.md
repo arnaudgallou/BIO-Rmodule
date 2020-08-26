@@ -38,9 +38,9 @@ After completing this module, you should be able to:
 <a name="r-basics" />
 
 # R basics
-Before you start, download and install both R ([download  R](https://cran.rstudio.com)) and RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you have not yet.
+Before you start, download and install **both** R ([download  R](https://cran.rstudio.com)) **and** RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you have not yet.
 
-I recommend using Rstudio for its user-friendly interface and useful additional functionalities.
+I recommend working in Rstudio for its user-friendly interface and useful additional functionalities.
 
 Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R script window** is what you will use to **write and save** your code. Write in your new script `"Welcome!"` and run the line using `Ctrl+Enter` (Windows/Linux) or `Cmd+Return` (Mac). The **output** is displayed in the **console window** (by default, it is the bottom left window) and should be `[1] "Welcome!"` in this case.
 
