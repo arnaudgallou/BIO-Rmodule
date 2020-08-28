@@ -775,7 +775,7 @@ iris %>%
 
 <a name="exercice--" />
 
-# Exercice
+# Exersice
 Using the `iris` dataset, look at the relationship between sepal area and petal area in *Iris versicolor* and *Iris virginica*.
 
 In two new columns, compute the petal and sepal area for each individual. Plot the sepal area against the petal area by species group using `ggplot()` and `geom_point()`.
