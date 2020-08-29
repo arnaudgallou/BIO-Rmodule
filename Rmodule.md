@@ -157,7 +157,7 @@ z
 If two or more variables in the same environment share the same name, the variable that is called the last overwrites all the previous variables with the same name.
 
 ```r
-value <- 2
+value <- 3
 value <- 4
 value
 ## [1] 4
@@ -306,10 +306,10 @@ To add a comment, simply insert a `#` before the statement you want to comment.
 
 ```r
 # comments are not interpreted by the console
-test_value <- 2
+test_value <- 3
 # test_value <- 4
 test_value
-## [1] 2
+## [1] 3
 ```
 
 <a name="tidyverse" />
