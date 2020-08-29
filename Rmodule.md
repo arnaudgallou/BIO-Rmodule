@@ -278,10 +278,10 @@ Here are some examples to illustrate how these operators work:
 "foo" == "foo"
 ## [1] TRUE
 
-2 != 3.5
+2 != 3
 ## [1] TRUE
 
-4 < -2
+4 < -2.12
 ## [1] FALSE
 
 c("Hello", "Bye") %in% c("Hello", "world", "!")
