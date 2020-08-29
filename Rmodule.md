@@ -20,7 +20,7 @@
     + [summarize()](#summarize--)
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
-- [Exercice](#exercice)
+- [Exercise](#exercice)
 - [To go further](#to-go-further)
 
 <a name="preamble" />
@@ -780,7 +780,7 @@ Using the `iris` dataset, look at the relationship between sepal area and petal 
 
 In two new columns, compute the petal and sepal area for each individual. Plot the sepal area against the petal area by species group using `ggplot()` and `geom_point()`.
 
-For the purpose of this exercice, we will make the assumption that the petal and sepal width does not change along the petal and sepal length.
+For the purpose of this exercise, we will make the assumption that the petal and sepal width does not change along the petal and sepal length.
 
 This time, we will change the default settings to make the scatter plot look prettier.
 
