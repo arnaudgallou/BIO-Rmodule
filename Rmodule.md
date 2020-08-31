@@ -750,7 +750,7 @@ penguins %>%
   )
 ```
 
-![](Rmodule_files/figure-html/geom_point.svg)<!-- -->
+![](figures/geom_point.svg)<!-- -->
 
 If you want to compare the bill length of each species, you can do so by plotting a boxplot:
 
@@ -768,7 +768,7 @@ penguins %>%
   )
 ```
 
-![](Rmodule_files/figure-html/geom_boxplot.svg)<!-- -->
+![](figures/geom_boxplot.svg)<!-- -->
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
