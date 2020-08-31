@@ -688,7 +688,7 @@ trees %>%
 <a name="importing-data--" />
 
 ## Importing data
-You can import `.csv` files using the `read_` [function family](https://readr.tidyverse.org/reference/read_delim.html). There are different functions for different separators.
+You can import `.csv` or `.txt` files using the `read_` [function family](https://readr.tidyverse.org/reference/read_delim.html). There are different functions for different separators.
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
