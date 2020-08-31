@@ -714,7 +714,7 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
    <td style="text-align:left;"> . </td>
   </tr>
    <td style="text-align:left;"> read_delim() </td>
-   <td style="text-align:left;"> to be defined in the "delim" argument </td>
+   <td style="text-align:left;"> custom character </td>
    <td style="text-align:left;"> . </td>
   <tr>
   </tr>
@@ -730,7 +730,7 @@ read_csv("path_to_file/data.csv")
 # or
 read_delim("path_to_file/data.csv", delim = ",")
 ```
-Use the more general `read_delim()` function to read file whose the values are separated with uncommon separators.
+Use the more general `read_delim()` function to read files whose the values are separated with uncommon separators and specify the separator in the `delim` argument.
 
 ```r
 # to read pipe-separated values file
