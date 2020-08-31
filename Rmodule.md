@@ -786,7 +786,7 @@ penguins %>%
 ## Saving a plot
 You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
 
-Save your plot as a `.svg` if your text editor supports it and if you are not limited by the weight of the file. Otherwise, save it as a `.png`.
+Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
 
 <a name="exercice--" />
 
