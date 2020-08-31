@@ -659,7 +659,7 @@ trees %>%
 ### summarize()
 The `summarize()` (or `summarise()`) function summarizes and reduces the dimensions of your data frame by grouping variables.
 
-E.g. summarising the `trees` data frame by `species`, `elevation` and `height_mean`:
+E.g. summarizing the `trees` data frame by `species`, `elevation` and `height_mean`:
 
 ```r
 trees %>% 
