@@ -700,21 +700,23 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
 <tbody>
   <tr>
    <td style="text-align:left;"> read_csv() </td>
+   <td style="text-align:left;"> comma (,) </td>
+   <td style="text-align:left;"> dot (.) </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> read_csv2() </td>
-   <td style="text-align:left;"> read_tsv() </td>
-   <td style="text-align:left;"> read_delim() </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> comma (,) </td>
    <td style="text-align:left;"> semi-colon (;) </td>
-   <td style="text-align:left;"> tab (\t) </td>
-   <td style="text-align:left;"> to be defined in the "delim" argument </td>
+   <td style="text-align:left;"> comma (,) </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> read_tsv() </td>
+   <td style="text-align:left;"> tab (\t) </td>
    <td style="text-align:left;"> dot (.) </td>
-   <td style="text-align:left;"> comma (,) </td>
+  </tr>
+   <td style="text-align:left;"> read_delim() </td>
+   <td style="text-align:left;"> to be defined in the "delim" argument </td>
    <td style="text-align:left;"> dot (.) </td>
-   <td style="text-align:left;"> dot (.) </td>
+  <tr>
   </tr>
 </tbody>
 </table>
