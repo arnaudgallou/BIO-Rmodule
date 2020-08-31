@@ -20,6 +20,7 @@
     + [summarize()](#summarize--)
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
+  * [Saving a plot](#saving-plot--)
 - [Exercise](#exercice)
 - [To go further](#to-go-further)
 
@@ -717,61 +718,66 @@ You can plot graphs using the ggplot2 package (part of the tidyverse).
 
 **Note:** `ggplot` functions are chained using a `+` sign. This is because `ggplot` does not pass an object to a function but add different layers on top of each other.
 
-We will use the `iris` dataset in this example. It is a built-in dataset of floral data of three *Iris* species, namely *Iris setosa*, *Iris versicolor* and *Iris virginica*.
+We will use the `penguins` dataset from the `palmerpenguins` package in this example. It is a dataset of size measurements for three penguins species, namely *Pygoscelis adeliae* (adelie penguin), *Pygoscelis papua* (gentoo penguin) and *Pygoscelis antarctica* (chinstrap penguin).
+
+First, install the package:
+
 
 ```r
-iris
-# # A tibble: 150 x 5
-#    Sepal.Length Sepal.Width Petal.Length Petal.Width Species
-#           <dbl>       <dbl>        <dbl>       <dbl> <fct>  
-#  1          5.1         3.5          1.4         0.2 setosa 
-#  2          4.9         3            1.4         0.2 setosa 
-#  3          4.7         3.2          1.3         0.2 setosa 
-#  4          4.6         3.1          1.5         0.2 setosa 
-#  5          5           3.6          1.4         0.2 setosa 
-#  6          5.4         3.9          1.7         0.4 setosa 
-#  7          4.6         3.4          1.4         0.3 setosa 
-#  8          5           3.4          1.5         0.2 setosa 
-#  9          4.4         2.9          1.4         0.2 setosa 
-# 10          4.9         3.1          1.5         0.1 setosa 
-# # … with 140 more rows
+install.packages("palmerpenguins")
 ```
-Assuming you want to see if there is a relationship between petal width and petal length for each species. You can visualize such relationship by plotting the petal width against the petal length in a scatter plot:
+Then load it and read the data:
+
 
 ```r
-iris %>% 
+library(palmerpenguins)
+penguins
+```
+Assuming you want to see if there is a relationship between flipper length and body mass for each species. You can visualize such relationship by plotting the flipper length against the body mass in a scatter plot:
+
+
+```r
+penguins %>% 
   ggplot(aes(
-    x = Petal.Length,
-    y = Petal.Width,
-    color = Species # to assign a color to each group
+    x = body_mass_g,
+    y = flipper_length_mm,
+    color = species # to assign a color to each group
   )) +
   geom_point() + # to plot a scatter plot
   labs(
-    x = "Petal length (cm)",
-    y = "Petal width (cm)"
+    x = "Body mass (g)",
+    y = "Flipper length (mm)"
   )
 ```
 
-![](figures/geom_point.svg)<!-- -->
+![](Rmodule_files/figure-html/geom_point-1.svg)<!-- -->
 
-If you want to compare the sepal length of each species, you can do so by plotting a boxplot:
+If you want to compare the bill length of each species, you can do so by plotting a boxplot:
+
 
 ```r
-iris %>% 
+penguins %>% 
   ggplot(aes(
-    x = Species,
-    y = Sepal.Length
+    x = species,
+    y = bill_length_mm
   )) +
   geom_boxplot() + # to plot a boxplot
   labs(
     x = NULL, # to remove the label of the x axis
-    y = "Sepal length (cm)"
+    y = "Bill length (mm)"
   )
 ```
 
-![](figures/geom_boxplot.svg)<!-- -->
+![](Rmodule_files/figure-html/geom_boxplot-1.svg)<!-- -->
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
+
+<a name="saving-plot--" />
+
+## Saving a plot
+You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
+
+Save your plot as a `.svg` if your text editor supports it and if you are not limited by the weight of the file. Otherwise, save it as a `.png`.
 
 <a name="exercice--" />
 
