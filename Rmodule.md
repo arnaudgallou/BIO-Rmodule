@@ -700,28 +700,28 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
 <tbody>
   <tr>
    <td style="text-align:left;"> read_csv() </td>
-   <td style="text-align:left;"> , </td>
-   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> , (comma) </td>
+   <td style="text-align:left;"> . (dot) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_csv2() </td>
-   <td style="text-align:left;"> ; </td>
-   <td style="text-align:left;"> , </td>
+   <td style="text-align:left;"> ; (semicolon) </td>
+   <td style="text-align:left;"> , (comma) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_tsv() </td>
    <td style="text-align:left;"> \t (tab) </td>
-   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . (dot) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_delim() </td>
    <td style="text-align:left;"> custom character </td>
-   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . (dot) </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_table2() </td>
    <td style="text-align:left;"> space </td>
-   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . (dot) </td>
   </tr>
 </tbody>
 </table>
@@ -740,7 +740,7 @@ Use the more general `read_delim()` function to read files whose the values are 
 read_delim("path_to_file/data.csv", delim = "|")
 ```
 
-**Note:** if your file uses a `,` as decimal separator but not a semi-colon as value separator, you need to specify the decimal separator in the locale argument as shown below:
+**Note:** if your file uses a `,` as decimal separator but not a `;` as value separator, you need to specify the decimal separator in the locale argument as shown below:
 ```r
 # to read a tab-separated values file using comma as decimal separator
 read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
