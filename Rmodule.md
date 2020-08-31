@@ -781,7 +781,7 @@ penguins %>%
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
-<a name="saving-plot--" />
+<a name="saving-plots--" />
 
 ## Saving plots
 You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
