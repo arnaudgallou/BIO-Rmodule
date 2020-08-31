@@ -20,7 +20,7 @@
     + [summarize()](#summarize--)
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
-  * [Saving a plot](#saving-plot--)
+  * [Saving plots](#saving-plots--)
 - [Exercise](#exercice)
 - [To go further](#to-go-further)
 
@@ -783,7 +783,7 @@ penguins %>%
 
 <a name="saving-plot--" />
 
-## Saving a plot
+## Saving plots
 You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
 
 Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
