@@ -720,21 +720,31 @@ You can plot graphs using the ggplot2 package (part of the tidyverse).
 
 We will use the `penguins` dataset from the `palmerpenguins` package in this example. It is a dataset of size measurements for three penguins species, namely *Pygoscelis adeliae* (adelie penguin), *Pygoscelis papua* (gentoo penguin) and *Pygoscelis antarctica* (chinstrap penguin).
 
-First, install the package:
-
+First, install and load the package:
 
 ```r
 install.packages("palmerpenguins")
+library(palmerpenguins)
 ```
-Then load it and read the data:
-
 
 ```r
-library(palmerpenguins)
 penguins
+# # A tibble: 344 x 8
+#    species island bill_length_mm bill_depth_mm flipper_length_… body_mass_g
+#    <fct>   <fct>           <dbl>         <dbl>            <int>       <int>
+#  1 Adelie  Torge…           39.1          18.7              181        3750
+#  2 Adelie  Torge…           39.5          17.4              186        3800
+#  3 Adelie  Torge…           40.3          18                195        3250
+#  4 Adelie  Torge…           NA            NA                 NA          NA
+#  5 Adelie  Torge…           36.7          19.3              193        3450
+#  6 Adelie  Torge…           39.3          20.6              190        3650
+#  7 Adelie  Torge…           38.9          17.8              181        3625
+#  8 Adelie  Torge…           39.2          19.6              195        4675
+#  9 Adelie  Torge…           34.1          18.1              193        3475
+# 10 Adelie  Torge…           42            20.2              190        4250
+# # … with 334 more rows, and 2 more variables: sex <fct>, year <int>
 ```
 Assuming you want to see if there is a relationship between flipper length and body mass for each species. You can visualize such relationship by plotting the flipper length against the body mass in a scatter plot:
-
 
 ```r
 penguins %>% 
@@ -753,7 +763,6 @@ penguins %>%
 ![](figures/geom_point.svg)<!-- -->
 
 If you want to compare the bill length of each species, you can do so by plotting a boxplot:
-
 
 ```r
 penguins %>% 
