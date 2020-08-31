@@ -750,7 +750,7 @@ penguins %>%
   )
 ```
 
-![](Rmodule_files/figure-html/geom_point-1.svg)<!-- -->
+![](Rmodule_files/figure-html/geom_point.svg)<!-- -->
 
 If you want to compare the bill length of each species, you can do so by plotting a boxplot:
 
@@ -768,7 +768,7 @@ penguins %>%
   )
 ```
 
-![](Rmodule_files/figure-html/geom_boxplot-1.svg)<!-- -->
+![](Rmodule_files/figure-html/geom_boxplot.svg)<!-- -->
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
@@ -782,28 +782,28 @@ Save your plot as a `.svg` if your text editor supports it and if you are not li
 <a name="exercice--" />
 
 # Exercise
-Using the `iris` dataset, look at the relationship between sepal area and petal area in *Iris versicolor* and *Iris virginica*.
+Using the `penguins` dataset, look at the relationship between bill area and body mass in adelie and chinstrap penguins.
 
-In two new columns, compute the petal and sepal area for each individual. Plot the sepal area against the petal area by species group using `ggplot()` and `geom_point()`.
+In a new column, compute the bill area for each individual. Plot the bill area against the body mass by species group using `ggplot()` and `geom_point()`.
 
-For the purpose of this exercise, we will make the assumption that the petal and sepal width does not change along the petal and sepal length.
+For the purpose of this exercise, we will make the assumption that the bill is flat and that the length and depth do not change along the bill.
 
 This time, we will change the default settings to make the scatter plot look prettier.
 
 Copy-paste the code below in a new R script. Replace the `# insert your code here` comment with your own code.
 
-Add in the `aes()` function (inside `ggplot()`) the argument `shape = Species` and `fill = Species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()`.
+Add in the `aes()` function (inside `ggplot()`) the argument `shape = Species` and `fill = Species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
 
 ```r
-iris_colors <- c("#FF9671", "#00D2FC")
+penguins_colors <- c("#FF9671", "#00D2FC")
 # insert your code here
 # do not forget to link your code and the lines below with a '+'
-  scale_color_manual(values = iris_colors) + # to change the colors of the points
+  scale_color_manual(values = penguins_colors) + # to change the colors of the points
   scale_shape_manual(values = c(21, 23)) + # to change the shape of the points
-  scale_fill_manual(values = alpha(iris_colors, .4)) + # to add the fill colors and transparency
+  scale_fill_manual(values = alpha(penguins_colors, .4)) + # to add the fill colors and transparency
   labs(
-    x = expression(Petal~area~(cm^{2})),
-    y = expression(Sepal~area~(cm^{2}))
+    x = "Body mass (g)",
+    y = expression(Bill~area~(mm^{2}))
   ) +
   theme_minimal() + # to change the general theme of the plot
   theme(
@@ -811,7 +811,6 @@ iris_colors <- c("#FF9671", "#00D2FC")
     legend.text = element_text(size = 11), # to increase the size of the legend
     axis.text = element_text(size = 11), # to increase the size of the axis tick labels
     axis.title = element_text(size = rel(1.1)) # to increase the size of the axis title, relative to the default size (1.1 times as big as the default size here)
-  )
 ```
 Here is the output you are supposed to get:
 
