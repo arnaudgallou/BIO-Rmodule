@@ -809,7 +809,7 @@ iris_colors <- c("#FF9671", "#00D2FC")
 ```
 Here is the output you are supposed to get:
 
-![](figures/excercice_output.svg)<!-- -->
+![](figures/excercise_output.svg)<!-- -->
 
 If you ended up with the same plot, congratulations! Do not hesitate to try to add the third species in the graph and to play around with different colors and [shapes](https://ggplot2.tidyverse.org/reference/scale_shape-6.png).
 
