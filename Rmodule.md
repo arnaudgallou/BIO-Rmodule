@@ -21,7 +21,7 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
   * [Saving plots](#saving-plots--)
-- [Exercise](#exercice)
+- [Exercise](#exercise)
 - [To go further](#to-go-further)
 
 <a name="preamble" />
@@ -788,7 +788,7 @@ You can save a plot by clicking on the `Export` button in the `Plots` window (bo
 
 Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
 
-<a name="exercice--" />
+<a name="exercise--" />
 
 # Exercise
 Using the `penguins` dataset, look at the relationship between bill area and body mass in adelie and chinstrap penguins.
