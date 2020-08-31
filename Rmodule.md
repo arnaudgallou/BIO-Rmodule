@@ -700,28 +700,28 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
 <tbody>
   <tr>
    <td style="text-align:left;"> read_csv() </td>
-   <td style="text-align:left;"> , (comma) </td>
-   <td style="text-align:left;"> . (dot) </td>
+   <td style="text-align:left;"> , </td>
+   <td style="text-align:left;"> . </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_csv2() </td>
-   <td style="text-align:left;"> ; (semicolon) </td>
-   <td style="text-align:left;"> , (comma) </td>
+   <td style="text-align:left;"> ; </td>
+   <td style="text-align:left;"> , </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_tsv() </td>
    <td style="text-align:left;"> \t (tab) </td>
-   <td style="text-align:left;"> . (dot) </td>
+   <td style="text-align:left;"> . </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_delim() </td>
    <td style="text-align:left;"> custom character </td>
-   <td style="text-align:left;"> . (dot) </td>
+   <td style="text-align:left;"> . </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_table2() </td>
    <td style="text-align:left;"> space </td>
-   <td style="text-align:left;"> . (dot) </td>
+   <td style="text-align:left;"> . </td>
   </tr>
 </tbody>
 </table>
