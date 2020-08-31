@@ -689,6 +689,35 @@ trees %>%
 
 ## Importing data
 You can import `.csv` files using the `read_` [function family](https://readr.tidyverse.org/reference/read_delim.html). There are different functions for different separators.
+<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> function </th>
+   <th style="text-align:left;"> value separator </th>
+   <th style="text-align:left;"> decimal separator </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> read_csv() </td>
+   <td style="text-align:left;"> read_csv2() </td>
+   <td style="text-align:left;"> read_tsv() </td>
+   <td style="text-align:left;"> read_delim() </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> comma (,) </td>
+   <td style="text-align:left;"> semi-colon (;) </td>
+   <td style="text-align:left;"> tab (\t) </td>
+   <td style="text-align:left;"> to be defined in the "delim" argument </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> dot (.) </td>
+   <td style="text-align:left;"> comma (,) </td>
+   <td style="text-align:left;"> dot (.) </td>
+   <td style="text-align:left;"> dot (.) </td>
+  </tr>
+</tbody>
+</table>
 
 E.g. to read a comma-separated values file:
 
@@ -696,19 +725,22 @@ E.g. to read a comma-separated values file:
 "path_to_file/data.csv" %>% read_csv()
 # or
 read_csv("path_to_file/data.csv")
-```
-Be sure to use the appropriate `read_` function for your file. Alternatively, you can use the more general `read_delim()` function and specify your separator manually in the `delim` argument.
-
-```r
-read_delim("path_to_file/data.csv", delim = "\t") # to read tab separated values
-```
-
-The `read_` functions use a `.` as the default decimal separator. **If your numeric values are separated with a `,`**, you need to specify it as shown below:
-```r
-# to read a semicolon-separated values file using comma as decimal separator
-read_csv2("path_to_file/data.csv", locale = locale(decimal_mark = ","))
 # or
-read_delim("path_to_file/data.csv", delim = ";", locale = locale(decimal_mark = ","))
+read_delim("path_to_file/data.csv", delim = ",")
+```
+Use the more general `read_delim()` function to read file whose the values are separated with uncommon separators.
+
+```r
+# to read pipe-separated values
+read_delim("path_to_file/data.csv", delim = "|")
+```
+
+**Note:** if your file uses a `,` as decimal separator but not a semi-colon as value separator, you need to specify the decimal separator in the locale argument as shown below:
+```r
+# to read a tab-separated values file using comma as decimal separator
+read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
+# or
+read_delim("path_to_file/data.csv", delim = "\t", locale = locale(decimal_mark = ","))
 ```
 
 <a name="plotting-data--" />
