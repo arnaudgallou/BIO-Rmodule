@@ -713,10 +713,15 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
    <td style="text-align:left;"> \t (tab) </td>
    <td style="text-align:left;"> . </td>
   </tr>
+  <tr>
    <td style="text-align:left;"> read_delim() </td>
    <td style="text-align:left;"> custom character </td>
    <td style="text-align:left;"> . </td>
+  </tr>
   <tr>
+   <td style="text-align:left;"> read_table2() </td>
+   <td style="text-align:left;"> space </td>
+   <td style="text-align:left;"> . </td>
   </tr>
 </tbody>
 </table>
@@ -727,8 +732,6 @@ E.g. to read a comma-separated values file:
 "path_to_file/data.csv" %>% read_csv()
 # or
 read_csv("path_to_file/data.csv")
-# or
-read_delim("path_to_file/data.csv", delim = ",")
 ```
 Use the more general `read_delim()` function to read files whose the values are separated with uncommon separators and specify the separator in the `delim` argument.
 
