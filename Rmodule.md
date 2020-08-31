@@ -700,22 +700,22 @@ You can import `.csv` files using the `read_` [function family](https://readr.ti
 <tbody>
   <tr>
    <td style="text-align:left;"> read_csv() </td>
-   <td style="text-align:left;"> comma (,) </td>
-   <td style="text-align:left;"> dot (.) </td>
+   <td style="text-align:left;"> , </td>
+   <td style="text-align:left;"> . </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_csv2() </td>
-   <td style="text-align:left;"> semi-colon (;) </td>
-   <td style="text-align:left;"> comma (,) </td>
+   <td style="text-align:left;"> ; </td>
+   <td style="text-align:left;"> , </td>
   </tr>
   <tr>
    <td style="text-align:left;"> read_tsv() </td>
-   <td style="text-align:left;"> tab (\t) </td>
-   <td style="text-align:left;"> dot (.) </td>
+   <td style="text-align:left;"> \t (tab) </td>
+   <td style="text-align:left;"> . </td>
   </tr>
    <td style="text-align:left;"> read_delim() </td>
    <td style="text-align:left;"> to be defined in the "delim" argument </td>
-   <td style="text-align:left;"> dot (.) </td>
+   <td style="text-align:left;"> . </td>
   <tr>
   </tr>
 </tbody>
@@ -733,7 +733,7 @@ read_delim("path_to_file/data.csv", delim = ",")
 Use the more general `read_delim()` function to read file whose the values are separated with uncommon separators.
 
 ```r
-# to read pipe-separated values
+# to read pipe-separated values file
 read_delim("path_to_file/data.csv", delim = "|")
 ```
 
