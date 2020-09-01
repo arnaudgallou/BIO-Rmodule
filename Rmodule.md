@@ -733,7 +733,7 @@ E.g. to read a comma-separated values file:
 # or
 read_csv("path_to_file/data.csv")
 ```
-Use the more general `read_delim()` function to read files whose the values are separated with an uncommon separator and specify the separator in the `delim` argument.
+Use the more general `read_delim()` function to read cases not presented in the table above and specify the separator in the `delim` argument.
 
 ```r
 # to read pipe-separated values file
