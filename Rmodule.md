@@ -740,7 +740,7 @@ Use the more general `read_delim()` function to read cases not presented in the 
 read_delim("path_to_file/data.csv", delim = "|")
 ```
 
-**Note:** if your file uses a `,` as decimal separator but not a `;` as value separator, you need to specify the decimal separator in the `locale` argument as shown below:
+**Note:** if you cannot use the `read_csv2()` function despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` argument as shown below:
 ```r
 # to read a tab-separated values file using comma as decimal separator
 read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
