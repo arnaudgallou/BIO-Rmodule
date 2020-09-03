@@ -877,7 +877,7 @@ Here are some recommendations if you want to expand your knowledge and skills in
 * [Official tidyverse website](https://www.tidyverse.org)
 * [R for Data Science](https://r4ds.had.co.nz/index.html)
 * [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org)
-* [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
+* [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/)
 
 RStudio useful functionalities:
 * [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
