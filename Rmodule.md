@@ -737,7 +737,7 @@ Use the more general `read_delim()` function to read cases not presented in the 
 
 ```r
 # to read pipe-separated values file
-read_delim("path_to_file/data.csv", delim = "|")
+"path_to_file/data.csv" %>% read_delim(delim = "|")
 ```
 
 **Note:** if the `read_csv2()` function is not appropriate despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` argument as shown below:
@@ -838,7 +838,7 @@ This time, we will change the default settings to make the scatter plot look pre
 
 Copy-paste the code below in a new R script. Replace the `# insert your code here` comment with your own code.
 
-Add in the `aes()` function (inside `ggplot()`) the argument `shape = Species` and `fill = Species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
+Add in the `aes()` function (inside `ggplot()`) the arguments `shape = Species` and `fill = Species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
 
 ```r
 penguins_colors <- c("#FF9671", "#00D2FC")
