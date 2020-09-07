@@ -21,7 +21,7 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
   * [Saving plots](#saving-plots)
-- [Projects](#projects)
+- [RStudio projects](#projects)
 - [Exercise](#exercise)
 - [To go further](#to-go-further)
 
@@ -828,10 +828,10 @@ Save your plots as `.svg` if your text editor supports it and if you are not lim
 
 <a name="projects" />
 
-# Projects
+# RStudio projects
 A **RStudio project** creates a **working directory** to help you organise files that belong to a same project.
 
-To create a new project in RStudio, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
+To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
 
 I recommend making a new RStudio project everytime you start a new research project. As a rule of thumb, when you work with at least two files.
 
