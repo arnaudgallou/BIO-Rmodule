@@ -21,8 +21,8 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
   * [Saving plots](#saving-plots)
-- [RStudio projects](#projects)
 - [Exercise](#exercise)
+- [RStudio projects](#projects)
 - [To go further](#to-go-further)
 
 <a name="preamble" />
