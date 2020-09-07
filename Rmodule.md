@@ -833,7 +833,7 @@ A **RStudio project** creates a **working directory** to help you organise files
 
 To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
 
-I recommend making a new RStudio project everytime you start a new research project. As a rule of thumb, when you work with at least two files.
+I recommend making a new RStudio project **everytime you start a new research project**. As a rule of thumb, whenever you have to work with at least two related files (script included).
 
 Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
 
@@ -851,7 +851,7 @@ Alpine plants
   |   |-alpine_plants.r
   |-figures
 ```
-Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`, you can easily do that by opening quotes `""` and press the `tab` key to get the list of all the different files in the project. Type the beginning of the file name `py` to filter the list. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as demonstrated in the [importing data](#importing-data--) section.
+Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`, you can easily do that by opening quotes `""` and press the `tab` key to list all the files in the project. Type the beginning of the file name `py` to filter the list. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as demonstrated in the [importing data](#importing-data--) section.
 
 You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
