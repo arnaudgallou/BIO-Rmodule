@@ -851,7 +851,7 @@ Alpine plants
   |   |-alpine_plants.r
   |-figures
 ```
-Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`. You can do that easily by opening quotes `"` and typing the beginning of the file name `py`. Press the `tab` key to open the list of all the different files starting with `py` in the directory. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as shown in the [importing data](#importing-data--) section.
+Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`, you can do that easily by opening quotes `"` and typing the beginning of the file name `py`. Press the `tab` key to open the list of all the different files starting with `py` in the directory. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as shown in the [importing data](#importing-data--) section.
 
 You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
