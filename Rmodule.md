@@ -837,7 +837,7 @@ I recommend making a new RStudio project everytime you start a new research proj
 
 Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
 
-To illustrate this, consider a RStudio project named `Alpine plants`, with the following file tree structure:
+To illustrate this, consider a RStudio project named `alpine plants`, with the following file tree structure:
 ```
 Alpine plants
   |-alpine plants.Rproj
