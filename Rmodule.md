@@ -21,8 +21,8 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
   * [Saving plots](#saving-plots)
-- [Exercise](#exercise)
 - [RStudio projects](#projects)
+- [Exercise](#exercise)
 - [To go further](#to-go-further)
 
 <a name="preamble" />
@@ -826,6 +826,35 @@ You can save a plot by clicking on the `Export` button in the `Plots` window (bo
 
 Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
 
+<a name="projects" />
+
+# RStudio projects
+A **RStudio project** creates a **working directory** to help you organise files that belong to a same project.
+
+To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
+
+I recommend making a new RStudio project everytime you start a new research project. As a rule of thumb, when you work with at least two files.
+
+Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
+
+To illustrate this, consider a RStudio project named `alpine plants`, with the following file tree structure:
+```
+Alpine plants
+  |-alpine plants.Rproj
+  |-data
+  |   |-plants
+  |   |   |-alps.csv
+  |   |   |-pyrenees.csv
+  |   |-bioclim
+  |       |-mean_temp.nc
+  |-scripts
+  |   |-alpine_plants.r
+  |-figures
+```
+Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`. You can do that easily by opening quotes `"` and typing the beginning of the file name `py`. Press the `tab` key to open the list of all the different files starting with `py` in the directory. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as shown in the [importing data](#importing-data--) section.
+
+You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
+
 <a name="exercise" />
 
 # Exercise
@@ -867,35 +896,6 @@ Here is the output you are supposed to get:
 If you ended up with the same plot, congratulations! Do not hesitate to try to add the third species in the graph and to play around with different colors and [shapes](https://ggplot2.tidyverse.org/reference/scale_shape-6.png).
 
 If you got a different graph, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
-
-<a name="projects" />
-
-# RStudio projects
-A **RStudio project** creates a **working directory** to help you organise files that belong to a same project.
-
-To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
-
-I recommend making a new RStudio project everytime you start a new research project. As a rule of thumb, when you work with at least two files.
-
-Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
-
-To illustrate this, consider a RStudio project named `alpine plants`, with the following file tree structure:
-```
-Alpine plants
-  |-alpine plants.Rproj
-  |-data
-  |   |-plants
-  |   |   |-alps.csv
-  |   |   |-pyrenees.csv
-  |   |-bioclim
-  |       |-mean_temp.nc
-  |-scripts
-  |   |-alpine_plants.r
-  |-figures
-```
-Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`. You can do that easily by opening quotes `"` and typing the beginning of the file name `py`. Press the `tab` key to open the list of all the different files starting with `py` in the directory. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as shown in the [importing data](#importing-data--) section.
-
-You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
 <a name="to-go-further" />
 
