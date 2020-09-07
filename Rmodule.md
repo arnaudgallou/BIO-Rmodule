@@ -829,7 +829,7 @@ Save your plots as `.svg` if your text editor supports it and if you are not lim
 <a name="projects" />
 
 # RStudio projects
-A **RStudio project** creates a **working directory** to help you organise files that belong to a same project.
+A **RStudio project** creates a **workspace** and **working directory** to help you organise files that belong to a same project.
 
 To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
 
@@ -837,7 +837,7 @@ I recommend making a new RStudio project **everytime you start a new research pr
 
 Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
 
-To illustrate this, consider a RStudio project named `alpine plants`, with the following file tree structure:
+To illustrate this, consider a project named `alpine plants`, with the following file tree structure:
 ```
 Alpine plants
   |-alpine plants.Rproj
