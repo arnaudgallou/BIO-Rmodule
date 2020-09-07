@@ -20,7 +20,8 @@
     + [summarize()](#summarize--)
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
-  * [Saving plots](#saving-plots--)
+  * [Saving plots](#saving-plots)
+- [Projects](#projects)
 - [Exercise](#exercise)
 - [To go further](#to-go-further)
 
@@ -818,14 +819,43 @@ penguins %>%
 
 `ggplot` offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
 
-<a name="saving-plots--" />
+<a name="saving-plots" />
 
 ## Saving plots
 You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
 
 Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
 
-<a name="exercise--" />
+<a name="projects" />
+
+# Projects
+A **RStudio project** creates a **working directory** to help you organise files that belong to a same project.
+
+To create a new project in RStudio, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
+
+I recommend making a new RStudio project everytime you start a new research project. As a rule of thumb, when you work with at least two files.
+
+Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
+
+To illustrate this, consider a RStudio project named `Alpine plants`, with the following file tree structure:
+```
+Alpine plants
+  |-alpine plants.Rproj
+  |-data
+  |   |-plants
+  |   |   |-alps.csv
+  |   |   |-pyrenees.csv
+  |   |-bioclim
+  |       |-mean_temp.nc
+  |-scripts
+  |   |-alpine_plants.r
+  |-figures
+```
+Supposing you want to import `pyrenees.csv` from within your R script `trees.r`. You can do that easily by opening quotes `"` and typing the beginning of the file name `py`. Press the `tab` key to open the list of all the different files starting with `py` in the directory. Select the correct file and press `enter` (Windows/Linux) or `return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here.
+
+You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
+
+<a name="exercise" />
 
 # Exercise
 Using the `penguins` dataset, look at the relationship between bill area and body mass in adelie and chinstrap penguins.
@@ -838,7 +868,7 @@ This time, we will change the default settings to make the scatter plot look pre
 
 Copy-paste the code below in a new R script. Replace the `# insert your code here` comment with your own code.
 
-Add in the `aes()` function (inside `ggplot()`) the arguments `shape = Species` and `fill = Species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
+Add in the `aes()` function (inside `ggplot()`) the arguments `shape = species` and `fill = species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
 
 ```r
 penguins_colors <- c("#FF9671", "#00D2FC")
@@ -882,4 +912,3 @@ Here are some recommendations if you want to expand your knowledge and skills in
 RStudio useful functionalities:
 * [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
 * [Data viewer](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
-* [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
