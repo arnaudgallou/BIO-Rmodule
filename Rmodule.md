@@ -21,8 +21,8 @@
   * [Importing data](#importing-data)
   * [Plotting data](#plotting-data)
   * [Saving plots](#saving-plots)
-- [Projects](#projects)
 - [Exercise](#exercise)
+- [Projects](#projects)
 - [To go further](#to-go-further)
 
 <a name="preamble" />
@@ -826,23 +826,6 @@ You can save a plot by clicking on the `Export` button in the `Plots` window (bo
 
 Save your plots as `.svg` if your text editor supports it and if you are not limited by file sizes. Otherwise, save your plots as `.png`.
 
-<a name="projects" />
-
-# Projects
-A **RStudio project** creates a **workspace** and **working directory** to help you organise and work with files that belong to a same project.
-
-To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
-
-I recommend making a new RStudio project **everytime you start a new research project**. As a rule of thumb, whenever you have to work with at least two related files (script included).
-
-Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
-
-E.g., to get the full path of a file, simply open quotes `""` and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
-
-![project - import file](figures/get_path_project.gif)
-
-You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
-
 <a name="exercise" />
 
 # Exercise
@@ -884,6 +867,23 @@ Here is the output you are supposed to get:
 If you ended up with the same plot, congratulations! Do not hesitate to try to add the third species in the graph and to play around with different colors and [shapes](https://ggplot2.tidyverse.org/reference/scale_shape-6.png).
 
 If you got a different graph, try a bit more. Do not hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and did not forget a comma or bracket.
+
+<a name="projects" />
+
+# Projects
+A **RStudio project** creates a **workspace** and **working directory** to help you organise and work with files that belong to a same project.
+
+To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
+
+I recommend making a new RStudio project **everytime you start a new research project**. As a rule of thumb, whenever you have to work with at least two related files (script included).
+
+Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
+
+E.g., to get the full path of a file, simply open quotes `""` and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
+
+![project - import file](figures/get_path_project.gif)
+
+You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
 <a name="to-go-further" />
 
