@@ -837,21 +837,9 @@ I recommend making a new RStudio project **everytime you start a new research pr
 
 Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
 
-To illustrate this, consider a project named `alpine plants`, with the following file tree structure:
-```
-Alpine plants
-  |-alpine plants.Rproj
-  |-data
-  |   |-plants
-  |   |   |-alps.csv
-  |   |   |-pyrenees.csv
-  |   |-bioclim
-  |       |-mean_temp.nc
-  |-scripts
-  |   |-alpine_plants.r
-  |-figures
-```
-Supposing you want to import `pyrenees.csv` from within the R script `alpine_plants.r`, you can easily do that by opening quotes `""` and press the `tab` key to list all the files in the project. Type the beginning of the file name `py` to filter the list. Select the correct file and press `Enter` (Windows/Linux) or `Return` (Mac). RStudio will generate the path to `pyrenees.csv` automatically, `data/plants/pyrenees.csv` here. The file is now ready to be read as demonstrated in the [importing data](#importing-data--) section.
+E.g., to get the full path of a file, simply open quotes `""` and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `Enter` (Windows/Linux) or `Return` (Mac). The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
+
+![project - import file](figures/import_file_project.gif)
 
 You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
 
