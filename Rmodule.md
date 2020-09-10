@@ -875,11 +875,11 @@ A **RStudio project** creates a **workspace** and **working directory** to help 
 
 To create a new project, go to `File` > `New Project…` > `New Directory` (or `Existing Directory` if you want to create your project from an existing folder) > `New Project` and choose a `Directory name` for your project.
 
-I recommend making a new RStudio project **everytime you start a new research project**. As a rule of thumb, whenever you have to work with at least two related files (script included).
+I recommend making a new RStudio project **everytime you start a new research project**. As a rule of thumb, whenever you have to work with at least two related files (scripts included).
 
-Because the working directory is relative to the project, it makes it very easy to navigate and access any files within a project.
+Because the working directory is relative to the project, it makes it very easy to navigate and access any file within a project.
 
-E.g., to get the full path of a file, simply open quotes `""` and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
+E.g., to get the path of a file, simply open quotes and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
 
 ![project - import file](figures/get_path_project.gif)
 
