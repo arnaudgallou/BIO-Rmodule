@@ -879,7 +879,7 @@ I recommend making a new RStudio project **everytime you start a new research pr
 
 Because the working directory is relative to the project, it makes it very easy to navigate and access any file within a project.
 
-E.g., to get the path of a file in a project, simply open quotes and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
+E.g., to get the path of a file in a project, simply open quotes and write the beginning of the file name or press `tab` to list all the files and folders in the project. Filter the list by typing part of the name of the desired item and press `tab` to validate. The file is now ready to be read as demonstrated in the [importing data](#importing-data) section.
 
 ![project - import file](figures/project_import_file.gif)
 
