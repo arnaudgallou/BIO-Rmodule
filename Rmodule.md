@@ -28,13 +28,13 @@
 <a name="preamble" />
 
 # Preamble
-This is a brief and condensed guide to help you grasp the **fundamentals** of the **R language** and **tidyverse** as quick as possible.
+This is a brief and condensed guide to help you grasp the **fundamentals** of the **R language** and **tidyverse** as quickly as possible.
 
 After completing this module, you should be able to:
 
-* know the different data types
-* understand and use variables, vectors and functions
-* know what the main logical operators are and how to use them
+* make the distinction between the different data types
+* create and use variables, vectors and functions
+* use the most common logical operators
 * use the basic tidyverse functions to import, transform and visualize your data
 
 <a name="r-basics" />
@@ -46,7 +46,7 @@ I recommend working in Rstudio for its user-friendly interface and useful additi
 
 Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R script window** is what you will use to **write and save** your code. Write in your new script `"Welcome!"` and run the line using `Ctrl+Enter` (Windows/Linux) or `Cmd+Return` (Mac). The **output** is displayed in the **console window** (by default, it is the bottom left window) and should be `[1] "Welcome!"` in this case.
 
-Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
+Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, using uppercase instead of lowercase and vice versa, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
 
 <a name="data-types" />
 
@@ -104,7 +104,7 @@ TRUE + TRUE
 <a name="vectors" />
 
 ## Vectors
-You can combine several elements into a single vector using the `c()` [function](#functions). In this case, the vector is a sequence of **elements** of the **same type**.
+You can combine multiple vectors into one using the `c()` [function](#functions). In this case, the vector is a sequence of **elements** of the **same type**.
 
 ```r
 # double-precision vector
@@ -131,7 +131,7 @@ c(1, 2, 3, "Hi", TRUE)
 <a name="variables" />
 
 ## Variables
-Variables provide a storage space to R objects. You can store in a variable a vector, function, list, data frame, matrix, chunck of code... well pretty much anything, including another variable.
+Variables provide a storage space to R objects. You can store all kind of data in a variable, including a chunck of code or another variable.
 
 To assign a name to your object, use the assignment operator `<-` (keyboard shorcut: `Alt+-` (Windows & Linux) or	`Option+-` (Mac)).
 
@@ -195,6 +195,7 @@ You can also create your own functions:
 m_to_feet <- function(value) {
   value / .3048
 }
+# you have to run the code above before being able to use the function
 
 m_to_feet(100)
 ## [1] 328.084
