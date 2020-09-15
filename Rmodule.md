@@ -46,7 +46,7 @@ I recommend working in Rstudio for its user-friendly interface and useful additi
 
 Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R script window** is what you will use to **write and save** your code. Write in your new script `"Welcome!"` and run the line using `Ctrl+Enter` (Windows/Linux) or `Cmd+Return` (Mac). The **output** is displayed in the **console window** (by default, it is the bottom left window) and should be `[1] "Welcome!"` in this case.
 
-Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
+Just like other coding and programming languages, R is prone to errors such as typos, using the wrong letter case, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. These type of errors are the most common, so always double-check your code whenever R is unhappy.
 
 <a name="data-types" />
 
