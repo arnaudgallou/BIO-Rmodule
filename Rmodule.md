@@ -622,7 +622,7 @@ The `distinct()` function subsets unique rows from a data frame.
 Subsetting unique species:
 
 ```r
-trees %>% distinct(species, .keep_all = TRUE) # use .keep_all = TRUE to retain all the columns
+trees %>% distinct(species, .keep_all = TRUE) # use .keep_all = TRUE to retain all columns
 # # A tibble: 3 x 3
 #   species              height elevation
 #   <chr>                 <dbl>     <dbl>
