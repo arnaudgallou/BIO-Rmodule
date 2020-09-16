@@ -330,7 +330,7 @@ When the download is complete, you can load the library with the following funct
 ```r
 library(tidyverse)
 ```
-**Note:** you must load packages every time you open or start a new RStudio session.
+**Note:** you must load packages every time you open or start a new RStudio session before using them.
 
 <a name="pipe-operator" />
 
