@@ -325,12 +325,12 @@ First off, install tidyverse. It might take a few minutes to download.
 ```r
 install.packages("tidyverse")
 ```
-When the download is complete, you can load the library with the following function:
+When the download is complete, you can load the package with the following function:
 
 ```r
 library(tidyverse)
 ```
-**Note:** you must load packages every time you open or start a new RStudio session before using them.
+**Note:** you must load packages every time you open or start a new RStudio session before being able to use them.
 
 <a name="pipe-operator" />
 
