@@ -192,7 +192,7 @@ You can also create your own functions:
 
 ```r
 # function to convert meters to feet
-# you must run the code below to be able to use the function
+# you have to run the code below to be able to use the function
 m_to_feet <- function(value) {
   value / .3048
 }
@@ -330,7 +330,7 @@ When the download is complete, you can load the package with the following funct
 ```r
 library(tidyverse)
 ```
-**Note:** you must load packages every time you open or start a new RStudio session to be able to use them.
+**Note:** you have to load packages every time you open or start a new RStudio session to be able to use them.
 
 <a name="pipe-operator" />
 
