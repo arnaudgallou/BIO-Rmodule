@@ -192,7 +192,8 @@ You can also create your own functions:
 
 ```r
 # function to convert meters to feet
-m_to_feet <- function(value) { # run the function to be able to use it later
+# run the function to be able to use it later
+m_to_feet <- function(value) {
   value / .3048
 }
 
