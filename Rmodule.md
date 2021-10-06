@@ -173,7 +173,7 @@ value
 ## Functions
 A function is what you use to perform an action on your objects. Similarly to objects, which can be thought as nouns and adjectives, functions can be thought as verbs.
 
-A function can have one, several or no parameters at all.
+A function can have one, several or no parameters at all. A parameter is a special type of variable used to pass data into the function. 
 
 ```r
 # a function with multiple parameters
@@ -201,7 +201,7 @@ m_to_feet <- function(value) {
 m_to_feet(100)
 ## [1] 328.084
 ```
-Arguments are assigned to parameter names in the order they are defined. Writing the name of each parameter is not mandatory but recommended to avoid any ambiguity or unwanted results.
+Arguments (data passed into function's parameters) are assigned to parameter names in the order they are defined. Writing the name of each parameter is not mandatory but recommended to avoid any ambiguity or unwanted results.
 
 Consider the example below:
 
