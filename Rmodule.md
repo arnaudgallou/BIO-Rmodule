@@ -893,7 +893,7 @@ You can learn more about RStudio projects [here](https://support.rstudio.com/hc/
 # To go further
 Here are some recommendations if you want to expand your knowledge and skills in R:
 
-* [BioStats](https://biostats.w.uib.no)
+* [introverse](https://spielmanlab.github.io/introverse/index.html)
 * [Rstudio Cloud](https://rstudio.cloud/learn/primers) (video tutorials)
 * [Official tidyverse website](https://www.tidyverse.org)
 * [R for Data Science](https://r4ds.had.co.nz/index.html)
