@@ -177,7 +177,7 @@ A function can have one, several or no parameters at all.
 
 ```r
 # a function with multiple parameters
-function_a(arg1, arg2)
+function_a(param1, param2)
 
 # a function with no parameter
 function_b()
