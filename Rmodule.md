@@ -173,16 +173,16 @@ value
 ## Functions
 A function is what you use to perform an action on your objects. Similarly to objects, which can be thought as nouns and adjectives, functions can be thought as verbs.
 
-A function can have one, several or no arguments at all.
+A function can have one, several or no parameters at all.
 
 ```r
-# a function with multiple arguments
+# a function with multiple parameters
 function_a(arg1, arg2)
 
-# a function with no argument
+# a function with no parameter
 function_b()
 ```
-**Note:** most arguments are optional. Arguments are separated by a `,`.
+**Note:** most parameters are optional. Parameters are separated by a `,`.
 
 Let's sum our previous `x` and `y` objects using the `sum()` function:
 
@@ -201,7 +201,7 @@ m_to_feet <- function(value) {
 m_to_feet(100)
 ## [1] 328.084
 ```
-Values are assigned to argument names in the order they are defined. Writing the name of each argument is not mandatory but recommended to avoid any ambiguity or unwanted results.
+Arguments are assigned to parameter names in the order they are defined. Writing the name of each parameter is not mandatory but recommended to avoid any ambiguity or unwanted results.
 
 Consider the example below:
 
@@ -346,9 +346,9 @@ Consider the following examples*:
 
 ` %>% ` can be read as `then`. E.g. `x %>% f() %>% g()` could be translated into words as: **object** *then* **do_sth** *then* **do_sth_else**.
 
-**Note:** by default, ` %>% ` passes the object on the left to the **first argument** of the function on the right.
+**Note:** by default, ` %>% ` passes the object on the left to the **first parameter** of the function on the right.
 
-To pass the object to a different argument in a function, you can use the `.` placeholder as shown in the examples* below:
+To pass the object to a different parameter in a function, you can use the `.` placeholder as shown in the examples* below:
 
 >`x %>% f(y, .)` is equivalent to `f(y, x)`  
 `x %>% f(y, z = .)` is equivalent to `f(y, z = x)`
@@ -737,14 +737,14 @@ E.g. to read a comma-separated values file:
 # or
 read_csv("path_to_file/data.csv")
 ```
-Use the more general `read_delim()` function to read cases not presented in the table above and specify the separator in the `delim` argument.
+Use the more general `read_delim()` function to read cases not presented in the table above and specify the separator in the `delim` parameter.
 
 ```r
 # to read pipe-separated values file
 "path_to_file/data.csv" %>% read_delim(delim = "|")
 ```
 
-**Note:** if the `read_csv2()` function is not appropriate despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` argument as shown below:
+**Note:** if the `read_csv2()` function is not appropriate despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` parameter as shown below:
 ```r
 # to read a tab-separated values file using comma as decimal separator
 read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
