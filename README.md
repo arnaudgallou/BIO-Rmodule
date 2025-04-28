@@ -910,7 +910,7 @@ folders in a project. Filter the list by typing part of the name and
 press `tab` to validate. The file is now ready to be read as
 demonstrated in the importing data section.
 
-![](figures/project_import_file.gif)
+![](figures/project-import-file.gif)
 
 You can learn more about RStudio projects
 [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
