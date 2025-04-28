@@ -426,8 +426,9 @@ penguins |>
 
 If you want to compare the bill length of each species, you can do so by plotting a boxplot:
 
-```{r fig.width=5.85}
+```{r}
 #| label: geom-boxplot
+#| fig-width: 5.85
 
 penguins |>
   ggplot(aes(
