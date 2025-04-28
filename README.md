@@ -82,8 +82,9 @@ ones: `character`, `logical`, `double` and `integer`.
 | “Hello world!” | character (enclosed in double or single quotes) | chr         |
 | TRUE, FALSE    | logical                                         | lgl         |
 
-> \[!NOTE\] `double` and `integer` types belong to the `numeric` class
-> type.
+> [!NOTE]
+>
+> `double` and `integer` types belong to the `numeric` class type.
 
 You can perform mathematical operations on `numeric` and `logical`
 vectors but not on `character` vectors.
@@ -155,10 +156,12 @@ To assign a name to your object, use the assignment operator `<-`
 my_variable <- my_object
 ```
 
-> \[!NOTE\] The name of the variable can be a combination of `letters`,
-> `digits`, `.` and `_`. You’re free to give your variable the name you
-> want as long as it **starts with** a `letter` or `.`. Choose a name
-> that is both **concise** and **explicit**.
+> [!NOTE]
+>
+> The name of the variable can be a combination of `letters`, `digits`,
+> `.` and `_`. You’re free to give your variable the name you want as
+> long as it **starts with** a `letter` or `.`. Choose a name that is
+> both **concise** and **explicit**.
 
 To print what is stored in a variable, simply call that variable.
 
@@ -187,9 +190,11 @@ value
 #> [1] 4
 ```
 
-> \[!NOTE\] R is case sensitive. This means that lower and upper case
-> letters are interpreted as different characters. E.g. `foo` is **not**
-> the same as `Foo`.
+> [!NOTE]
+>
+> R is case sensitive. This means that lower and upper case letters are
+> interpreted as different characters. E.g. `foo` is **not** the same as
+> `Foo`.
 
 ## Functions
 
@@ -207,8 +212,9 @@ function_a(arg_1, arg_2)
 function_b()
 ```
 
-> \[!NOTE\] Most arguments are optional. Arguments are separated by a
-> `,`.
+> [!NOTE]
+>
+> Most arguments are optional. Arguments are separated by a `,`.
 
 Let’s sum our previous `x` and `y` objects using the `sum()` function:
 
@@ -338,8 +344,10 @@ following function:
 library(tidyverse)
 ```
 
-> \[!NOTE\] You must load packages every time you open or start a new
-> RStudio session before being able to use them.
+> [!NOTE]
+>
+> You must load packages every time you open or start a new RStudio
+> session before being able to use them.
 
 ## Pipe operator
 
@@ -349,10 +357,12 @@ operator forwards an object to a function. It reduces the number of
 intermediate objects to create and prevents the nesting of functions,
 consequently making the code easier to read and write.
 
-> \[!NOTE\] `|>` was introduced in R 4.1.0. To use it, go to Tools \>
-> Global Options \> Code \> Use native pipe operator. The keyboard
-> shorcut for `|>` is `Ctrl`+`Shift`+`M` (Windows & Linux) or
-> `Cmd`+`Shift`+`M` (Mac).
+> [!NOTE]
+>
+> `|>` was introduced in R 4.1.0. To use it, go to Tools \> Global
+> Options \> Code \> Use native pipe operator. The keyboard shorcut for
+> `|>` is `Ctrl`+`Shift`+`M` (Windows & Linux) or `Cmd`+`Shift`+`M`
+> (Mac).
 
 Consider the following examples:
 
@@ -366,17 +376,21 @@ Consider the following examples:
 into words as: **take x** *then* **do something** *then* **do something
 else**.
 
-> \[!NOTE\] By default, `|>` forwards the object on the left to the
-> **first argument** of the function on the right.
+> [!NOTE]
+>
+> By default, `|>` forwards the object on the left to the **first
+> argument** of the function on the right.
 
 To pass the object to a different argument in a function, you can use
 the `_` placeholder as shown in the examples\* below:
 
 `x |> f(y, z = _)` is equivalent to `f(y, z = x)`
 
-> \[!NOTE\] There’s an older pipe `%>%` operator imported from the
-> [magrittr package](https://magrittr.tidyverse.org). Both pipes work
-> differently although they behave similarly in most cases (see [\|\> vs
+> [!NOTE]
+>
+> There’s an older pipe `%>%` operator imported from the [magrittr
+> package](https://magrittr.tidyverse.org). Both pipes work differently
+> although they behave similarly in most cases (see [\|\> vs
 > %\>%](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/#-vs)
 > to know more about the differences between the two).
 
@@ -459,9 +473,11 @@ trees |> mutate(elevation = m_to_feet(elevation))
 #> 9 Betula pendula Roth.      4     5577. Alps
 ```
 
-> \[!NOTE\] I used the name `elevation` here to keep the example simple.
-> It’s usually a good habit to add the unit to the name,
-> e.g. `elevation_m` or `elevation_ft`.
+> [!NOTE]
+>
+> I used the name `elevation` here to keep the example simple. It’s
+> usually a good habit to add the unit to the name, e.g. `elevation_m`
+> or `elevation_ft`.
 
 You can apply this change to all the `dbl` columns at once using your
 own function inside `across()`:

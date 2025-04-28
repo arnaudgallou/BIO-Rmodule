@@ -22,16 +22,18 @@ library(tidyverse)
 conflicted::conflicts_prefer(dplyr::filter())
 ```
 
-> [!NOTE]
-> You must load packages every time you open or start a new RStudio session before being able to use them.
+::: {.callout-note}
+You must load packages every time you open or start a new RStudio session before being able to use them.
+:::
 
 ## Pipe operator
 
 One of the key features of the tidyverse is the possibility to chain functions in an effective way using the pipe operator ` |> `. The pipe operator forwards an object to a function. It reduces the number of intermediate objects to create and prevents the nesting of functions, consequently making the code easier to read and write.
 
-> [!NOTE]
-> `|>` was introduced in R 4.1.0. To use it, go to Tools > Global Options > Code > Use native pipe operator.
-> The keyboard shorcut for `|>` is `Ctrl`+`Shift`+`M` (Windows & Linux) or	`Cmd`+`Shift`+`M` (Mac).
+::: {.callout-note}
+`|>` was introduced in R 4.1.0. To use it, go to Tools > Global Options > Code > Use native pipe operator.
+The keyboard shorcut for `|>` is `Ctrl`+`Shift`+`M` (Windows & Linux) or	`Cmd`+`Shift`+`M` (Mac).
+:::
 
 Consider the following examples:
 
@@ -43,15 +45,17 @@ Consider the following examples:
 
 ` |> ` can be read as `then`. E.g. `x |> f() |> g()` could be translated into words as: **take x** *then* **do something** *then* **do something else**.
 
-> [!NOTE]
-> By default, ` |> ` forwards the object on the left to the **first argument** of the function on the right.
+::: {.callout-note}
+By default, ` |> ` forwards the object on the left to the **first argument** of the function on the right.
+:::
 
 To pass the object to a different argument in a function, you can use the `_` placeholder as shown in the examples* below:
 
 `x |> f(y, z = _)` is equivalent to `f(y, z = x)`
 
-> [!NOTE]
-> There's an older pipe `%>%` operator imported from the [magrittr package](https://magrittr.tidyverse.org). Both pipes work differently although they behave similarly in most cases (see [|> vs %>%](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/#-vs) to know more about the differences between the two).
+::: {.callout-note}
+There's an older pipe `%>%` operator imported from the [magrittr package](https://magrittr.tidyverse.org). Both pipes work differently although they behave similarly in most cases (see [|> vs %>%](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/#-vs) to know more about the differences between the two).
+:::
 
 ## Manipulating data
 
@@ -100,8 +104,9 @@ E.g. let's convert the elevation from meter to feet using the `m_to_feet()` func
 trees |> mutate(elevation = m_to_feet(elevation))
 ```
 
-> [!NOTE]
-> I used the name `elevation` here to keep the example simple. It's usually a good habit to add the unit to the name, e.g. `elevation_m` or `elevation_ft`.
+::: {.callout-note}
+I used the name `elevation` here to keep the example simple. It's usually a good habit to add the unit to the name, e.g. `elevation_m` or `elevation_ft`.
+:::
 
 You can apply this change to all the `dbl` columns at once using your own function inside `across()`:
 
