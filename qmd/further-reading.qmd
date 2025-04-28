@@ -1,0 +1,16 @@
+# To go further
+
+Here're some recommendations to expand your knowledge of R:
+
+* [BioStats](https://biostats.w.uib.no)
+* [Rstudio Cloud](https://rstudio.cloud/learn/primers) (video tutorials)
+* [Official tidyverse website](https://www.tidyverse.org)
+* [R for Data Science](https://r4ds.had.co.nz/index.html)
+* [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org)
+* [Fundamentals of Data Visualization](https://serialmentor.com/dataviz/)
+
+RStudio useful functionalities:
+
+* [Code completion](https://support.rstudio.com/hc/en-us/articles/205273297-Code-Completion)
+* [Data viewer](https://support.rstudio.com/hc/en-us/articles/205175388-Using-the-Data-Viewer)
+* [R project](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)

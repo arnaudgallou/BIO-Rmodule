@@ -1,0 +1,29 @@
+---
+title: "A (very) short introduction to R and the tidyverse"
+format:
+  gfm:
+    df-print: tibble
+    toc: true
+    toc-depth: 3
+    fig-format: svg
+execute:
+  message: false
+  warning: false
+knitr:
+  opts_chunk:
+    comment: "#>"
+    collapse: true
+    fig.path: figures/
+---
+
+{{< include qmd/preamble.qmd >}}
+
+{{< include qmd/basics.qmd >}}
+
+{{< include qmd/tidyverse.qmd >}}
+
+{{< include qmd/project.qmd >}}
+
+{{< include qmd/exercise.qmd >}}
+
+{{< include qmd/further-reading.qmd >}}

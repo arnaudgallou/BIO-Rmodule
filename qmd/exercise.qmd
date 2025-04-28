@@ -1,0 +1,77 @@
+# Exercise
+
+Using the `penguins` dataset, look at the relationship between bill area and body mass in adelie and chinstrap penguins.
+
+In a new column, compute the bill area for each individual. Plot the bill area against the body mass by species group using `ggplot()` and `geom_point()`.
+
+For the purpose of this exercise, we'll make the assumption that the bill is flat and that the length and depth don't change along the bill.
+
+This time, we'll change the default settings to make the scatter plot look prettier.
+
+Copy-paste the code below in a new R script. Replace the `# insert your code here` comment with your own code.
+
+Add in the `aes()` function (inside `ggplot()`) the arguments `shape = species` and `fill = species` to assign a shape and fill color to your groups, respectively. Finally, add the argument `size = 3` inside `geom_point()` to increase the size of the points.
+
+```{r}
+#| label: better-plot
+#| eval: false
+
+penguins_colors <- c("#FF9671", "#00D2FC")
+
+# insert your code here
+# don't forget to link your code and the lines below with a '+'
+  scale_color_manual(values = penguins_colors) + # to change the colors of the points
+  scale_shape_manual(values = c(21, 23)) + # to change the shape of the points
+  scale_fill_manual(values = alpha(penguins_colors, .4)) + # to add the fill colors and transparency
+  labs(
+    x = "Body mass (g)",
+    y = expression(Bill~area~(mm^{2}))
+  ) +
+  theme_minimal() + # to change the general theme of the plot
+  theme(
+    legend.title = element_blank(), # to remove the legend title
+    legend.text = element_text(size = 11), # to increase the size of the legend
+    axis.text = element_text(size = 11), # to increase the size of the axis tick labels
+    axis.title = element_text(size = rel(1.1)) # to increase the size of the axis title, relative to the default size (1.1 times as big as the default size here)
+```
+Here's the output you're supposed to get:
+
+```{r}
+#| label: exercise-output
+#| echo: false
+
+library(ggplot2)
+penguins_colors <- c("#FF9671", "#00D2FC")
+
+palmerpenguins::penguins |>
+  dplyr::filter(species != "Gentoo") |>
+  dplyr::mutate(
+    bill_area = bill_length_mm * bill_depth_mm
+  ) |>
+  ggplot(aes(
+    x = body_mass_g,
+    y = bill_area,
+    color = species,
+    shape = species,
+    fill = species
+  )) +
+  geom_point(size = 3) +
+  scale_color_manual(values = penguins_colors) +
+  scale_shape_manual(values = c(21, 23)) +
+  scale_fill_manual(values = alpha(penguins_colors, .4)) +
+  labs(
+    x = "Body mass (g)",
+    y = expression(Bill~area~(mm^{2}))
+  ) +
+  theme_minimal() +
+  theme(
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11),
+    axis.text = element_text(size = 11),
+    axis.title = element_text(size = rel(1.1))
+  )
+```
+
+If you ended up with the same plot, congratulations!
+
+If not, try a bit more. Don't hesitate to go back and read the different sections again. All the information needed to make the plot is in this page. If you have an error, check that you used a proper chaining sign and didn't forget a comma or bracket.

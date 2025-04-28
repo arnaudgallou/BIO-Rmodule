@@ -1,0 +1,250 @@
+# R basics
+
+Before you start, download and install **both** R ([download  R](https://cran.rstudio.com)) **and** RStudio ([download RStudio](https://rstudio.com/products/rstudio/download/#download)) if you haven't yet.
+
+I recommend working in Rstudio for its user-friendly interface and useful additional functionalities.
+
+Start RStudio and open a new script: `File` >` New File` > `R Script`. The **R script window** is what you'll use to **write and save** your code. Write in your new script `"Welcome!"` and run the line using `Ctrl`+`Enter` (Windows/Linux) or `Cmd`+`Return` (Mac). The **output** is displayed in the **console window** (by default, it's the bottom left window) and should be `[1] "Welcome!"` in this case.
+
+Just like other coding and programming languages, R is prone to syntax errors, e.g. typos, forgetting a quote, bracket or comma. Such mistakes will break your code and throw an error. Syntax errors are the most common type of error, so always double-check your code whenever R is unhappy.
+
+## Data types
+
+R treats all data as objects (think objects as nouns and adjectives). The most basic type of object in R is called a vector. E.g. `24` and `"hi"` are two different vectors of one element. Different vectors have different data types.
+
+There're six data types in R. Here, we'll focus on the four most common ones: `character`, `logical`, `double` and `integer`.
+
+```{r}
+#| label: data-types-tbl
+#| echo: false
+
+tibble::tribble(
+  ~Value, ~Type, ~Abbrevation,
+  "-1, 0, 2.38", "double", "dbl",
+  "-1L, 0L, 2L", "integer", "int",
+  '"Hello world!"', "character (enclosed in double or single quotes)", "chr",
+  "TRUE, FALSE", "logical", "lgl"
+) |>
+  knitr::kable()
+```
+
+> [!NOTE]
+> `double` and `integer` types belong to the `numeric` class type.
+
+You can perform mathematical operations on `numeric` and `logical` vectors but not on `character` vectors.
+
+```{r}
+#| label: example-data-types
+#| error: true
+
+1 + 1
+
+TRUE + TRUE
+
+"1" + "1"
+```
+
+## Vectors
+
+You can combine multiple vectors into one using the `c()` [function](#functions). In this case, the vector is a sequence of **elements** of the **same type** (also known as atomic vector).
+
+```{r}
+#| label: vec
+#| results: "hide"
+
+# double-precision vector
+c(1, -2, 430.78)
+
+# integer vector
+c(1L, -2L, 430L)
+
+# character vector
+c("foo", "bar")
+
+# logicial vector
+c(TRUE, FALSE, FALSE)
+```
+
+`c()` automatically converts each element to the same type.
+
+```{r}
+#| label: vec-different-types
+
+# despite having a single character element,
+# the entire set is converted to the character type
+
+c(1, "Hi", TRUE)
+```
+
+You can combine vectors of different type using `list()`:
+
+```{r}
+#| label: list
+#| collpase: true
+list(1, "Hi", TRUE)
+```
+
+## Variables
+
+Variables provide a storage space to R objects. You can store all type of data in a variable, including chunk of code or another variable.
+
+To assign a name to your object, use the assignment operator `<-` (keyboard shorcut: `Alt`+`-` (Windows & Linux) or	`Option`+`-` (Mac)).
+
+```{r}
+#| label: var-syntax
+#| eval: false
+my_variable <- my_object
+```
+
+> [!NOTE]
+> The name of the variable can be a combination of `letters`, `digits`, `.` and `_`. You're free to give your variable the name you want as long as it **starts with** a `letter` or `.`. Choose a name that is both **concise** and **explicit**.
+
+To print what is stored in a variable, simply call that variable.
+
+```{r}
+#| label: example-vars
+
+hello_wold <- "Hello world!"
+hello_wold
+
+x <- 2
+x
+
+y <- 4
+z <- x * y
+z
+```
+
+If two or more variables in the same environment have the same name, R will return the value of the variable defined the last.
+
+```{r}
+#| label: example-vars-same-name
+
+value <- 3
+value <- 4
+value
+```
+
+> [!NOTE]
+> R is case sensitive. This means that lower and upper case letters are interpreted as different characters. E.g. `foo` is **not** the same as `Foo`.
+
+## Functions
+
+A function is what you use to perform an action on your objects. Similarly to objects, which can be thought as nouns and adjectives, functions can be thought as verbs.
+
+A function can take one, several or no arguments at all.
+
+```{r}
+#| label: fn-syntax
+#| eval: false
+
+# a function with multiple arguments
+function_a(arg_1, arg_2)
+
+# a function with no arguments
+function_b()
+```
+
+> [!NOTE]
+> Most arguments are optional. Arguments are separated by a `,`.
+
+Let's sum our previous `x` and `y` objects using the `sum()` function:
+
+```{r}
+#| label: example-fn
+sum(x, y)
+```
+
+You can also create your own functions:
+
+```{r}
+#| label: function
+
+# function to convert meters to feet
+m_to_feet <- function(value) {
+  value / .3048
+}
+
+m_to_feet(100)
+```
+
+Values are assigned to argument names in the order they're defined. Writing the name of each argument isn't mandatory but can lead to unwanted results.
+
+```{r}
+#| label: arg-order
+
+divide <- function(dividend, divisor) {
+  dividend / divisor
+}
+
+divide(x, y)
+
+divide(y, x)
+
+divide(divisor = y, dividend = x)
+```
+
+It's common to omit the first two argument names of frequently used functions but I highly recommend writing the name of any subsequent argument in functions that take more than two arguments.
+
+## Relational and logical operators
+
+You can use relational and logical operators to compare values and perform boolean operations. These operators yield a boolean value, that is either `TRUE` or `FALSE`.
+
+Below is a list of R's most common relational and logical operators.
+
+```{r}
+#| label: logical-operators-tbl
+#| echo: false
+
+tibble::tribble(
+  ~Operator, ~Description,
+  "!", "not",
+  "==", "equal to",
+  "!=", "not equal to",
+  "<", "less than",
+  ">", "greater than",
+  "<=", "less than or equal to",
+  ">=", "greater than or equal to",
+  "%in%", "check if one or more elements exist in a vector",
+  "&", "and",
+  "|", "or"
+) |>
+  knitr::kable()
+```
+
+Here're some examples to illustrate how these operators work:
+
+```{r}
+#| label: example-logical-operators
+
+"foo" == "foo"
+
+2 != 3.5
+
+4 < -2
+
+c("Hello", "Bye") %in% c("Hello", "world", "!")
+
+!(2 %in% c(3, 6, 2))
+
+TRUE & FALSE
+
+TRUE | FALSE
+```
+
+## Comments
+
+You can write comments in your script to add details and information to your code, or to stop a line from running. Comments are muted, meaning they aren't interpreted by the console.
+
+To add a comment, simply insert a `#` before the statement you want to comment.
+
+```{r}
+#| label: example-comments
+
+# comments aren't interpreted by the console
+x <- 3
+
+# x <- 4
+
+x
+```

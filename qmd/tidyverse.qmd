@@ -1,0 +1,450 @@
+# Tidyverse
+
+Tidyverse is a **collection** of **packages** specifically designed to import, manipulate, transform and visualize data. All the tidyverse packages incorporate a common phylosophy and grammar to form a **coherent framework** that facilitates the use of the tidyverse functions.
+
+First off, install tidyverse. It might take a few minutes to download.
+
+```{r}
+#| label: install-tidyverse
+#| eval: false
+install.packages("tidyverse")
+```
+
+When the download is complete, you can load the package with the following function:
+
+```{r}
+#| label: load-tidyverse
+library(tidyverse)
+```
+
+```{r}
+#| include: false
+conflicted::conflicts_prefer(dplyr::filter())
+```
+
+> [!NOTE]
+> You must load packages every time you open or start a new RStudio session before being able to use them.
+
+## Pipe operator
+
+One of the key features of the tidyverse is the possibility to chain functions in an effective way using the pipe operator ` |> `. The pipe operator forwards an object to a function. It reduces the number of intermediate objects to create and prevents the nesting of functions, consequently making the code easier to read and write.
+
+> [!NOTE]
+> `|>` was introduced in R 4.1.0. To use it, go to Tools > Global Options > Code > Use native pipe operator.
+> The keyboard shorcut for `|>` is `Ctrl`+`Shift`+`M` (Windows & Linux) or	`Cmd`+`Shift`+`M` (Mac).
+
+Consider the following examples:
+
+`x |> f()` is equivalent to `f(x)`
+
+`x |> f(y)` is equivalent to `f(x, y)`
+
+`x |> f() |> g() |> h()` is equivalent to `h(g(f(x)))`
+
+` |> ` can be read as `then`. E.g. `x |> f() |> g()` could be translated into words as: **take x** *then* **do something** *then* **do something else**.
+
+> [!NOTE]
+> By default, ` |> ` forwards the object on the left to the **first argument** of the function on the right.
+
+To pass the object to a different argument in a function, you can use the `_` placeholder as shown in the examples* below:
+
+`x |> f(y, z = _)` is equivalent to `f(y, z = x)`
+
+> [!NOTE]
+> There's an older pipe `%>%` operator imported from the [magrittr package](https://magrittr.tidyverse.org). Both pipes work differently although they behave similarly in most cases (see [|> vs %>%](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/#-vs) to know more about the differences between the two).
+
+## Manipulating data
+
+Here, you'll learn some key functions from the tidyverse to handle data.
+
+Let's make a small data set to begin with. We'll name our data set `trees`:
+
+```{r}
+#| label: tree-tbl
+
+trees <- tribble(
+  ~species,               ~height, ~elevation,
+  "Larix decidua Mill.",  10,      2900,
+  "Fagus sylvatica L.",   17,      600,
+  "Fagus sylvatica L.",   29,      600,
+  "Larix decidua Mill.",  7,       2900,
+  "Larix decidua Mill.",  34,      2300,
+  "Fagus sylvatica L.",   22,      NA,
+  NA,                     9,       1100,
+  "Larix decidua Mill.",  6,       NA,
+  "Betula pendula Roth.", 4,       1700,
+)
+trees
+```
+
+### mutate()
+
+The `mutate()` function adds or transforms an existing column.
+
+Let's create a `location` column with the value `Alps`:
+
+```{r}
+#| label: mutate
+
+trees <- trees |> mutate(location = "Alps")
+trees
+```
+
+To edit an existing column, simply `mutate` the column you want to edit.
+
+E.g. let's convert the elevation from meter to feet using the `m_to_feet()` function we previously made:
+
+```{r}
+#| label: mutate-fn
+
+trees |> mutate(elevation = m_to_feet(elevation))
+```
+
+> [!NOTE]
+> I used the name `elevation` here to keep the example simple. It's usually a good habit to add the unit to the name, e.g. `elevation_m` or `elevation_ft`.
+
+You can apply this change to all the `dbl` columns at once using your own function inside `across()`:
+
+```{r}
+#| label: mutate-by-type
+
+trees |>
+  mutate(across(
+    \(x) is.double(x),
+    \(x) x / 0.3048
+  ))
+```
+
+Here, `\(x) x / 0.3048` is an anonymous function. It's the shorthand for `function(x) x / 0.3048`.
+
+The code above targets all the columns of type `dbl` and applies our anonymous function to divide the values of the selected column by 0.3048.
+
+You could of course use `m_to_feet()` instead:
+
+```{r}
+#| label: mutate-by-type-fn
+#| eval: false
+
+trees |>
+  mutate(across(
+    \(x) is.double(x),
+    m_to_feet
+  ))
+```
+
+### select()
+
+The `select()` function subsets columns by name, number and/or type.
+
+Subsetting columns by name or number:
+
+```{r}
+#| label: select-by-name-or-position
+#| eval: false
+
+select(col_name1, col_name2, col_name3)
+
+# or
+
+select(1, 2, 3)
+```
+
+To subset columns by type, you can use [helper functions](https://dplyr.tidyverse.org/reference/select.html):
+
+```{r}
+#| label: select-by-type
+
+trees |> select(\(x) is.character(x))
+```
+
+Let's just remove the `location` column for now:
+
+```{r}
+#| label: drop-column
+
+trees <- trees |> select(-location)
+trees
+```
+
+### drop_na()
+
+The `drop_na()` function removes `NA` values in the entire data frame or specific columns.
+
+Let's remove the row containing `NA` in the `species` column:
+
+```{r}
+#| label: drop-nas
+
+trees <- trees |> drop_na(species)
+trees
+```
+
+### filter()
+
+The `filter()` function subsets a data frame by keeping rows that satisfy one or more conditions.
+
+Let's filter trees whose the height is higher than 25 m **or** species is *Betula pendula*:
+
+```{r}
+#| label: filter
+trees |> filter(height > 25 | species == "Betula pendula Roth.")
+```
+
+### if_else() & case_when()
+
+The `if_else()` and `case_when()` functions allows you to replace column values with another based on one or more conditions.
+
+The syntax of `if_else()` is as follows:
+
+```{r}
+#| label: if-else-syntax
+#| eval: false
+if_else(condition, value_if_cond_TRUE, value_if_cond_FALSE)
+```
+
+E.g. let's replace the missing elevation of *Larix decidua*:
+
+```{r}
+#| label: if-else
+
+trees |>
+  mutate(elevation = if_else(
+    is.na(elevation) & species == "Larix decidua Mill.", # check if the elevation is NA and the species is Larix decidua
+    2900, # replace values that satisfy the condition by 2900
+    elevation # keep the original values when the condition isn't met
+  ))
+```
+
+Use `case_when()` if you want to test more than one condition and edit values based on each condition. The syntax is a bit different than that of `if_else()` but not much complicated.
+
+```{r}
+#| label: case-when-syntax
+#| eval: false
+case_when(
+  condition1 ~ value_when_condition1_is_true,
+  condition2 ~ value_when_condition2_is_true,
+  conditionN ~ value_when_conditionN_is_true,
+  .default = value_when_previous_conditions_are_false
+)
+```
+
+Let's expand the previous example to the two species that have no elevation:
+
+```{r}
+#| label: case-when
+
+trees <- trees |>
+  mutate(elevation = case_when(
+    is.na(elevation) & species == "Larix decidua Mill." ~ 2900,
+    is.na(elevation) & species == "Fagus sylvatica L." ~ 600,
+    .default = elevation # to keep the original values when the conditions above aren't met
+  ))
+trees
+```
+
+### distinct()
+
+The `distinct()` function subsets unique rows from a data frame.
+
+Subsetting unique species:
+
+```{r}
+#| label: distinct
+
+# use `.keep_all = TRUE` to retain all the columns
+trees |> distinct(species, .keep_all = TRUE)
+```
+
+### .by and group_by()
+
+Many tidyverse verbs used in data transformation have a `.by` parameter that allows you to apply a operation on groups of data defined by one or more variables.
+
+Let's calculate the mean height by species:
+
+```{r}
+#| label: by
+
+trees |>
+  mutate(
+    height_mean = mean(height),
+    .by = species
+  )
+```
+
+If you need to apply different operations on a same group, you can use the `group_by()` function:
+
+```{r}
+#| label: group-by
+#| eval: false
+
+trees |>
+  group_by(species) |>
+  filter(elevation > 1000) |>
+  mutate(height_mean = mean(height)) |>
+  ungroup()
+```
+
+Always `ungroup()` after using `group_by()` to ensure that future operations don't apply to the grouping variables.
+
+### summarize()
+
+The `summarize()` (or `summarise()`) function summarizes and reduces the dimensions of your data frame by grouping variables.
+
+E.g. summarising the `trees` data frame by `species` and `height_mean`:
+
+```{r}
+#| label: summarize
+
+trees <- trees |>
+  summarize(
+    height_mean = mean(height),
+    .by = c(species, elevation)
+  )
+```
+
+The code above is the equivalent to:
+
+```{r}
+#| label: summarize-equivalent
+#| eval: false
+
+trees |>
+  mutate(
+    height_mean = mean(height),
+    .by = c(species, elevation)
+  ) |>
+  distinct(species, elevation, height_mean) |>
+  arrange(species, elevation) # to sort rows by species and elevation in ascending order
+```
+
+## Importing data
+
+You can import `.csv` files using the `read_*()` [function family](https://readr.tidyverse.org/reference/read_delim.html). There're different functions for different separators.
+
+```{r}
+#| label: readr-fns-tbl
+#| echo: false
+
+tribble(
+  ~Function, ~Value, ~Decimal,
+  "read_csv()", ",", ".",
+  "read_csv2()", ";", ",",
+  "read_tsv()", "\\\\t (tab)", ".",
+  "read_delim()", "custom character", ".",
+  "read_table2()", "space", "."
+) |>
+  knitr::kable()
+```
+
+E.g. to read a comma-separated values file:
+
+```{r}
+#| label: read-csv
+#| eval: false
+
+"path_to_file/data.csv" |> read_csv()
+
+# or
+
+read_csv("path_to_file/data.csv")
+```
+
+Use the more general `read_delim()` function to read cases not presented in the table above and specify the separator in the `delim` argument.
+
+```{r}
+#| label: read-delim
+#| eval: false
+
+# to read a pipe-separated values file
+"path_to_file/data.csv" |> read_delim(delim = "|")
+```
+
+If the `read_csv2()` function isn't appropriate despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` argument as shown below:
+
+```{r}
+#| label: example-locale
+#| eval: false
+
+# to read a tab-separated values file using comma as decimal separator
+read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
+
+# or
+
+read_delim(
+  "path_to_file/data.csv",
+  delim = "\t",
+  locale = locale(decimal_mark = ",")
+)
+```
+
+## Plotting data
+
+You can plot graphs using the ggplot2 package (part of the tidyverse).
+
+> [!WARNING]
+> ggplot2 functions are chained using a `+` sign.
+
+We'll use the `penguins` dataset from the `palmerpenguins` package in this example. It's a dataset of size measurements for three penguins species, namely *Pygoscelis adeliae* (adelie penguin), *Pygoscelis papua* (gentoo penguin) and *Pygoscelis antarctica* (chinstrap penguin).
+
+First, install and load the package:
+
+```{r}
+#| label: install-palmerpenguins
+#| eval: false
+
+install.packages("palmerpenguins")
+library(palmerpenguins)
+```
+
+```{r}
+#| include: false
+library(palmerpenguins)
+```
+
+```{r}
+#| label: data-penguins
+penguins
+```
+
+Assuming you want to see if there's a relationship between flipper length and body mass for each species. You can visualize such relationship by plotting the flipper length against the body mass in a scatter plot:
+
+```{r}
+#| label: geom-point
+
+penguins |>
+  ggplot(aes(
+    x = body_mass_g,
+    y = flipper_length_mm,
+    color = species # to assign a color to each group
+  )) +
+  geom_point() +
+  labs(
+    x = "Body mass (g)",
+    y = "Flipper length (mm)"
+  )
+```
+
+If you want to compare the bill length of each species, you can do so by plotting a boxplot:
+
+```{r fig.width=5.85}
+#| label: geom-boxplot
+
+penguins |>
+  ggplot(aes(
+    x = species,
+    y = bill_length_mm
+  )) +
+  geom_boxplot() + # to plot a boxplot
+  labs(
+    x = NULL, # to remove the label of the x axis
+    y = "Bill length (mm)"
+  )
+```
+
+ggplot2 offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
+
+## Saving a plot
+
+You can save a plot by clicking on the `Export` button in the `Plots` window (bottom right window by default).
+
+I recommend saving your plots as `.svg` or `.pdf` if you aren't limited by the weight of the files. Otherwise, save plots as `.png`.

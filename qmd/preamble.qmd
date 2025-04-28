@@ -1,0 +1,10 @@
+# Preamble
+
+This is a brief and condensed guide to help you grasp the **fundamentals** of the **R language** and **tidyverse** as quickly as possible.
+
+After completing this module, you should be able to:
+
+* make the distinction between the different data types
+* create and use variables, vectors and functions
+* use the most common logical operators
+* use the basic tidyverse functions to import, transform and visualize your data
