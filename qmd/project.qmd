@@ -10,6 +10,6 @@ Because the working directory is relative to the project, it makes it very easy 
 
 E.g., to get the full path of a file, simply open quotes `""` and write the beginning of the file name or press `tab` to list all the files and folders in a project. Filter the list by typing part of the name and press `tab` to validate. The file is now ready to be read as demonstrated in the importing data section.
 
-![](figures/project_import_file.gif)
+![](figures/project-import-file.gif)
 
 You can learn more about RStudio projects [here](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects).
