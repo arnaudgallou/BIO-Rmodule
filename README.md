@@ -206,7 +206,7 @@ A function can take one, several or no arguments at all.
 
 ``` r
 # a function with multiple arguments
-function_a(arg_1, arg_2)
+function_a(arg1, arg2)
 
 # a function with no arguments
 function_b()
@@ -294,7 +294,7 @@ Here’re some examples to illustrate how these operators work:
 c("Hello", "Bye") %in% c("Hello", "world", "!")
 #> [1]  TRUE FALSE
 
-!(2 %in% c(3, 6, 2))
+!2 %in% c(3, 6, 2)
 #> [1] FALSE
 
 TRUE & FALSE
@@ -314,9 +314,9 @@ To add a comment, simply insert a `#` before the statement you want to
 comment.
 
 ``` r
-# comments aren't interpreted by the console
 x <- 3
 
+# comments aren't interpreted by the console
 # x <- 4
 
 x
@@ -376,13 +376,11 @@ Consider the following examples:
 into words as: **take x** *then* **do something** *then* **do something
 else**.
 
-> [!NOTE]
->
-> By default, `|>` forwards the object on the left to the **first
-> argument** of the function on the right.
+By default, `|>` forwards the object on the left to the **first
+argument** of the function on the right.
 
 To pass the object to a different argument in a function, you can use
-the `_` placeholder as shown in the examples\* below:
+the `_` placeholder as shown in the example below:
 
 `x |> f(y, z = _)` is equivalent to `f(y, z = x)`
 
@@ -620,7 +618,11 @@ values with another based on one or more conditions.
 The syntax of `if_else()` is as follows:
 
 ``` r
-if_else(condition, value_if_cond_TRUE, value_if_cond_FALSE)
+if_else(
+  condition,
+  value_when_condition_is_true,
+  value_when_condition_is_false
+)
 ```
 
 E.g. let’s replace the missing elevation of *Larix decidua*:
@@ -745,7 +747,7 @@ operations don’t apply to the grouping variables.
 The `summarize()` (or `summarise()`) function summarizes and reduces the
 dimensions of your data frame by grouping variables.
 
-E.g. summarising the `trees` data frame by `species` and `height_mean`:
+E.g. summarising the average tree height by `species` and `elevation`:
 
 ``` r
 trees <- trees |>
@@ -784,10 +786,6 @@ different functions for different separators.
 E.g. to read a comma-separated values file:
 
 ``` r
-"path_to_file/data.csv" |> read_csv()
-
-# or
-
 read_csv("path_to_file/data.csv")
 ```
 
@@ -796,7 +794,7 @@ in the table above and specify the separator in the `delim` argument.
 
 ``` r
 # to read a pipe-separated values file
-"path_to_file/data.csv" |> read_delim(delim = "|")
+read_delim("path_to_file/data.csv", delim = "|")
 ```
 
 If the `read_csv2()` function isn’t appropriate despite having a file
@@ -808,7 +806,6 @@ separator in the `locale` argument as shown below:
 read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
 
 # or
-
 read_delim(
   "path_to_file/data.csv",
   delim = "\t",
@@ -820,7 +817,9 @@ read_delim(
 
 You can plot graphs using the ggplot2 package (part of the tidyverse).
 
-> \[!WARNING\] ggplot2 functions are chained using a `+` sign.
+> [!WARNING]
+>
+> ggplot2 functions are chained using a `+` sign.
 
 We’ll use the `penguins` dataset from the `palmerpenguins` package in
 this example. It’s a dataset of size measurements for three penguins
@@ -830,7 +829,7 @@ papua* (gentoo penguin) and *Pygoscelis antarctica* (chinstrap penguin).
 First, install and load the package:
 
 ``` r
-install.packages("palmerpenguins")
+# install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
 
@@ -863,7 +862,7 @@ penguins |>
   ggplot(aes(
     x = body_mass_g,
     y = flipper_length_mm,
-    color = species # to assign a color to each group
+    color = species # to assign a color to each species
   )) +
   geom_point() +
   labs(
@@ -883,17 +882,17 @@ penguins |>
     x = species,
     y = bill_length_mm
   )) +
-  geom_boxplot() + # to plot a boxplot
+  geom_boxplot() +
   labs(
-    x = NULL, # to remove the label of the x axis
+    x = NULL, # to remove the title of the x axis
     y = "Bill length (mm)"
   )
 ```
 
 ![](figures/geom-boxplot-1.svg)
 
-ggplot2 offers many plotting possibilities. You can learn more
-[here](https://ggplot2-book.org).
+ggplot2 offers many plotting possibilities. You can learn more at
+<https://ggplot2-book.org>.
 
 ## Saving a plot
 

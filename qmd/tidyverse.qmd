@@ -45,11 +45,9 @@ Consider the following examples:
 
 ` |> ` can be read as `then`. E.g. `x |> f() |> g()` could be translated into words as: **take x** *then* **do something** *then* **do something else**.
 
-::: {.callout-note}
 By default, ` |> ` forwards the object on the left to the **first argument** of the function on the right.
-:::
 
-To pass the object to a different argument in a function, you can use the `_` placeholder as shown in the examples* below:
+To pass the object to a different argument in a function, you can use the `_` placeholder as shown in the example below:
 
 `x |> f(y, z = _)` is equivalent to `f(y, z = x)`
 
@@ -204,7 +202,11 @@ The syntax of `if_else()` is as follows:
 ```{r}
 #| label: if-else-syntax
 #| eval: false
-if_else(condition, value_if_cond_TRUE, value_if_cond_FALSE)
+if_else(
+  condition,
+  value_when_condition_is_true,
+  value_when_condition_is_false
+)
 ```
 
 E.g. let's replace the missing elevation of *Larix decidua*:
@@ -295,7 +297,7 @@ Always `ungroup()` after using `group_by()` to ensure that future operations don
 
 The `summarize()` (or `summarise()`) function summarizes and reduces the dimensions of your data frame by grouping variables.
 
-E.g. summarising the `trees` data frame by `species` and `height_mean`:
+E.g. summarising the average tree height by `species` and `elevation`:
 
 ```{r}
 #| label: summarize
@@ -347,10 +349,6 @@ E.g. to read a comma-separated values file:
 #| label: read-csv
 #| eval: false
 
-"path_to_file/data.csv" |> read_csv()
-
-# or
-
 read_csv("path_to_file/data.csv")
 ```
 
@@ -361,7 +359,7 @@ Use the more general `read_delim()` function to read cases not presented in the 
 #| eval: false
 
 # to read a pipe-separated values file
-"path_to_file/data.csv" |> read_delim(delim = "|")
+read_delim("path_to_file/data.csv", delim = "|")
 ```
 
 If the `read_csv2()` function isn't appropriate despite having a file that uses a `,` as decimal separator, you need to specify the decimal separator in the `locale` argument as shown below:
@@ -374,7 +372,6 @@ If the `read_csv2()` function isn't appropriate despite having a file that uses 
 read_tsv("path_to_file/data.csv", locale = locale(decimal_mark = ","))
 
 # or
-
 read_delim(
   "path_to_file/data.csv",
   delim = "\t",
@@ -386,8 +383,9 @@ read_delim(
 
 You can plot graphs using the ggplot2 package (part of the tidyverse).
 
-> [!WARNING]
-> ggplot2 functions are chained using a `+` sign.
+::: {.callout-warning}
+ggplot2 functions are chained using a `+` sign.
+:::
 
 We'll use the `penguins` dataset from the `palmerpenguins` package in this example. It's a dataset of size measurements for three penguins species, namely *Pygoscelis adeliae* (adelie penguin), *Pygoscelis papua* (gentoo penguin) and *Pygoscelis antarctica* (chinstrap penguin).
 
@@ -395,14 +393,8 @@ First, install and load the package:
 
 ```{r}
 #| label: install-palmerpenguins
-#| eval: false
 
-install.packages("palmerpenguins")
-library(palmerpenguins)
-```
-
-```{r}
-#| include: false
+# install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
 
@@ -420,7 +412,7 @@ penguins |>
   ggplot(aes(
     x = body_mass_g,
     y = flipper_length_mm,
-    color = species # to assign a color to each group
+    color = species # to assign a color to each species
   )) +
   geom_point() +
   labs(
@@ -440,14 +432,14 @@ penguins |>
     x = species,
     y = bill_length_mm
   )) +
-  geom_boxplot() + # to plot a boxplot
+  geom_boxplot() +
   labs(
-    x = NULL, # to remove the label of the x axis
+    x = NULL, # to remove the title of the x axis
     y = "Bill length (mm)"
   )
 ```
 
-ggplot2 offers many plotting possibilities. You can learn more [here](https://ggplot2-book.org).
+ggplot2 offers many plotting possibilities. You can learn more at <https://ggplot2-book.org>.
 
 ## Saving a plot
 

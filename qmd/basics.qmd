@@ -51,7 +51,7 @@ You can combine multiple vectors into one using the `c()` [function](#functions)
 
 ```{r}
 #| label: vec
-#| results: "hide"
+#| output: false
 
 # double-precision vector
 c(1, -2, 430.78)
@@ -142,7 +142,7 @@ A function can take one, several or no arguments at all.
 #| eval: false
 
 # a function with multiple arguments
-function_a(arg_1, arg_2)
+function_a(arg1, arg2)
 
 # a function with no arguments
 function_b()
@@ -229,7 +229,7 @@ Here're some examples to illustrate how these operators work:
 
 c("Hello", "Bye") %in% c("Hello", "world", "!")
 
-!(2 %in% c(3, 6, 2))
+!2 %in% c(3, 6, 2)
 
 TRUE & FALSE
 
@@ -245,9 +245,9 @@ To add a comment, simply insert a `#` before the statement you want to comment.
 ```{r}
 #| label: example-comments
 
-# comments aren't interpreted by the console
 x <- 3
 
+# comments aren't interpreted by the console
 # x <- 4
 
 x
