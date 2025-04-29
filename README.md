@@ -130,7 +130,7 @@ c(1, "Hi", TRUE)
 #> [1] "1"    "Hi"   "TRUE"
 ```
 
-You can combine vectors of different type using `list()`:
+You can combine vectors of different types using `list()`:
 
 ``` r
 list(1, "Hi", TRUE)
@@ -236,8 +236,8 @@ m_to_feet(100)
 ```
 
 Values are assigned to argument names in the order they’re defined.
-Writing the name of each argument isn’t mandatory but can lead to
-unwanted results.
+Writing the name of each argument isn’t mandatory but omitting them can
+lead to unwanted results.
 
 ``` r
 divide <- function(dividend, divisor) {
