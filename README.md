@@ -988,14 +988,13 @@ and didn’t forget a comma or bracket.
 
 Here’re some recommendations to expand your knowledge of R:
 
-- [BioStats](https://biostats.w.uib.no)
+- [BioStats](https://biostats-r.github.io/biostats)
 - [Rstudio Cloud](https://rstudio.cloud/learn/primers) (video tutorials)
 - [Official tidyverse website](https://www.tidyverse.org)
 - [R for Data Science](https://r4ds.had.co.nz/index.html)
 - [ggplot2: Elegant Graphics for Data
   Analysis](https://ggplot2-book.org)
-- [Fundamentals of Data
-  Visualization](https://serialmentor.com/dataviz/)
+- [Fundamentals of Data Visualization](https://clauswilke.com/dataviz)
 
 RStudio useful functionalities:
 
